@@ -1,6 +1,4 @@
-﻿## Interface: 20503
-## Interface-Classic: 11401
-## Interface-BCC: 20503
+﻿## Interface: 30400
 ## Author: Lag
 ## Version: @project-version@
 ## Dependencies: AtlasLootClassic
@@ -43,7 +41,5 @@
 Locales\Locales.xml
 
 data.lua
-#@version-bcc@
 data-tbc.lua
-#@end-version-bcc@
 droprate.lua
