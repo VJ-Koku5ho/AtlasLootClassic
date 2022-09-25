@@ -34,7 +34,7 @@ local QUEST_EXTRA_ITTYPE = data:AddExtraItemTableType("Quest")
 local PRICE_EXTRA_ITTYPE = data:AddExtraItemTableType("Price")
 
 local PROF_CONTENT = data:AddContentType(ALIL["Professions"], ATLASLOOT_PRIMPROFESSION_COLOR)
-local PROF_GATH_CONTENT = data:AddContentType(ALIL["Gathering Professions"], ATLASLOOT_PRIMPROFESSION_COLOR)
+local PROF_GATH_CONTENT = data:AddContentType(AL["Gathering Professions"], ATLASLOOT_PRIMPROFESSION_COLOR)
 local PROF_SEC_CONTENT = data:AddContentType(AL["Secondary Professions"], ATLASLOOT_SECPROFESSION_COLOR)
 local PROF_CLASS_CONTENT = data:AddContentType(AL["Class Professions"], ATLASLOOT_CLASSPROFESSION_COLOR)
 
@@ -1414,7 +1414,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, ALIL["Orange"]),
+			name = format(GEM_FORMAT1, AL["Orange"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39738 }, -- Wicked Pyrestone (375)
 				{ 2, 39471 }, -- Wicked Noble Topaz (350)
@@ -1439,7 +1439,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, ALIL["Green"]),
+			name = format(GEM_FORMAT1, AL["Green"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39739 }, -- Enduring Seaspray Emerald (375)
 				{ 2, 31110 }, -- Enduring Talasite (350)
@@ -1460,7 +1460,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, ALIL["Purple"]),
+			name = format(GEM_FORMAT1, AL["Purple"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39728 }, -- Shifting Shadowsong Amethyst (375)
 				{ 2, 31103 }, -- Shifting Nightseye (350)

@@ -82,7 +82,7 @@ local PVP_INSIGNIA = {	-- Insignias
 }
 
 local PVP_GEMS = {	-- Gems
-	name = ALIL["Gems"],
+	name = AL["Gems"],
 	NORMAL_ITTYPE = ICON_ITTYPE,
 	ExtraList = true,
 	[NORMAL_DIFF] = {
@@ -103,7 +103,7 @@ data["HonorSetBCC"] = {
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = ALIL["Sets"],
+			name = AL["Sets"],
 			TableType = SET_ITTYPE,
 			[ALLIANCE_DIFF] = {
 				{ 1,    591 }, -- Warlock
@@ -229,7 +229,7 @@ data["HonorSetBCC"] = {
 			},
 		},
 		{
-			name = ALIL["Back"],
+			name = ALIL["Cloak"],
 			[ALLIANCE_DIFF] = {
 				{ 1, 28377 }, -- Sergeant's Heavy Cloak
 				{ 2, 28378 }, -- Sergeant's Heavy Cape
@@ -250,7 +250,7 @@ data["ReputationSetBCC"] = {
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = ALIL["Sets"],
+			name = AL["Sets"],
 			TableType = SET_ITTYPE,
 			[NORMAL_DIFF] = {
 				{ 1,    738 }, -- Warlock
