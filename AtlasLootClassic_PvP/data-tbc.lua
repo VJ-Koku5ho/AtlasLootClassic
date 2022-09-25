@@ -11,10 +11,10 @@ local format = string.format
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
 -- ----------------------------------------------------------------------------
-local addonname = ...
+local addonname, private = ...
 local AtlasLoot = _G.AtlasLoot
 if AtlasLoot:GameVersion_LT(AtlasLoot.BC_VERSION_NUM) then return end
-local data = AtlasLoot.ItemDB:Add(addonname, 1, 2)
+local data = AtlasLoot.ItemDB:Add(addonname, 1, AtlasLoot.BC_VERSION_NUM)
 
 local AL = AtlasLoot.Locales
 local ALIL = AtlasLoot.IngameLocales
@@ -82,7 +82,7 @@ local PVP_INSIGNIA = {	-- Insignias
 }
 
 local PVP_GEMS = {	-- Gems
-	name = ALIL["Gems"],
+	name = AL["Gems"],
 	NORMAL_ITTYPE = ICON_ITTYPE,
 	ExtraList = true,
 	[NORMAL_DIFF] = {
@@ -97,13 +97,13 @@ local PVP_GEMS = {	-- Gems
 	},
 }
 
-data["BCCHonorSet"] = {
+data["HonorSetBCC"] = {
 	name = AL["Honor"],
 	ContentType = GENERAL_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = ALIL["Sets"],
+			name = AL["Sets"],
 			TableType = SET_ITTYPE,
 			[ALLIANCE_DIFF] = {
 				{ 1,    591 }, -- Warlock
@@ -229,7 +229,7 @@ data["BCCHonorSet"] = {
 			},
 		},
 		{
-			name = ALIL["Back"],
+			name = ALIL["Cloak"],
 			[ALLIANCE_DIFF] = {
 				{ 1, 28377 }, -- Sergeant's Heavy Cloak
 				{ 2, 28378 }, -- Sergeant's Heavy Cape
@@ -244,13 +244,13 @@ data["BCCHonorSet"] = {
 	},
 }
 
-data["BCCReputationSet"] = {
+data["ReputationSetBCC"] = {
 	name = AL["Reputation"],
 	ContentType = GENERAL_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = ALIL["Sets"],
+			name = AL["Sets"],
 			TableType = SET_ITTYPE,
 			[NORMAL_DIFF] = {
 				{ 1,    738 }, -- Warlock
@@ -279,9 +279,7 @@ data["PvPMountsBCC"] = {
 	name = ALIL["Mounts"],
 	ContentType = GENERAL_CONTENT,
 	LoadDifficulty = LOAD_DIFF,
-	CorrespondingFields = {
-		[1] = "Mounts",
-	},
+	CorrespondingFields = private.MOUNTS_LINK,
 	items = {
 		{ -- PvPMountsPvP
 			name = ALIL["Mounts"],

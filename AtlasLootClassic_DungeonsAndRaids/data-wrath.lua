@@ -19,12 +19,12 @@ local data = AtlasLoot.ItemDB:Add(addonname, 3, AtlasLoot.WRATH_VERSION_NUM)
 local AL = AtlasLoot.Locales
 local ALIL = AtlasLoot.IngameLocales
 
-local NORMAL_DIFF = data:AddDifficulty("NORMAL", nil, nil, nil, true)
-local HEROIC_DIFF = data:AddDifficulty("HEROIC", nil, nil, nil, true)
-local RAID10_DIFF = data:AddDifficulty("10RAID")
-local RAID10H_DIFF = data:AddDifficulty("10RAIDH")
-local RAID25_DIFF = data:AddDifficulty("25RAID")
-local RAID25H_DIFF = data:AddDifficulty("25RAIDH")
+local NORMAL_DIFF = data:AddDifficulty(AL["NORMAL"], nil, nil, nil, true)
+local HEROIC_DIFF = data:AddDifficulty(AL["HEROIC"], nil, nil, nil, true)
+local RAID10_DIFF = data:AddDifficulty(AL["10RAID"])
+local RAID10H_DIFF = data:AddDifficulty(AL["10RAIDH"])
+local RAID25_DIFF = data:AddDifficulty(AL["25RAID"])
+local RAID25H_DIFF = data:AddDifficulty(AL["25RAIDH"])
 
 local VENDOR_DIFF = data:AddDifficulty(AL["Vendor"], "vendor", 0)
 local T10_1_DIFF = data:AddDifficulty(AL["10H / 25 / 25H"], "T10_1", 0)

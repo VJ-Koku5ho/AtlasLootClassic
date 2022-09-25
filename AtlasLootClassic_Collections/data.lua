@@ -24,12 +24,12 @@ local ALIL = AtlasLoot.IngameLocales
 
 local GetForVersion = AtlasLoot.ReturnForGameVersion
 
-local NORMAL_DIFF = data:AddDifficulty("NORMAL", nil, nil, nil, true)
-local HEROIC_DIFF = data:AddDifficulty("HEROIC", nil, nil, nil, true)
-local RAID10_DIFF = data:AddDifficulty("10RAID")
-local RAID10H_DIFF = data:AddDifficulty("10RAIDH")
-local RAID25_DIFF = data:AddDifficulty("25RAID")
-local RAID25H_DIFF = data:AddDifficulty("25RAIDH")
+local NORMAL_DIFF = data:AddDifficulty(AL["Normal"], "n", 1, nil, true)
+local HEROIC_DIFF = data:AddDifficulty(AL["Heroic"], "h", 2, nil, true)
+local RAID10_DIFF = data:AddDifficulty(AL["10RAID"])
+local RAID10H_DIFF = data:AddDifficulty(AL["10RAIDH"])
+local RAID25_DIFF = data:AddDifficulty(AL["25RAID"])
+local RAID25H_DIFF = data:AddDifficulty(AL["25RAIDH"])
 
 local VENDOR_DIFF = data:AddDifficulty(AL["Vendor"], "vendor", 0)
 local T10_1_DIFF = data:AddDifficulty(AL["10H / 25 / 25H"], "T10_1", 0)
@@ -185,7 +185,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 	}
 
 	data["BadgeofJustice4"] = {
-		name = format(AL["'%s %s' Vendor"], AL["Badge of Justice"], "P4"),
+		name = format(AL["P4'%s' Vendor"], AL["Badge of Justice"], "P4"),
 		ContentType = VENDOR_CONTENT,
 		TableType = NORMAL_ITTYPE,
 		gameVersion = AtlasLoot.BC_VERSION_NUM,
@@ -288,7 +288,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 				},
 			},
 			{
-				name = ALIL["Back"],
+				name = ALIL["Cloak"],
 				[NORMAL_DIFF] = {
 					{ 1, 33593 },
 					{ 2, 35321 },
@@ -327,7 +327,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 				},
 			},
 			{
-				name = ALIL["Wand"],
+				name = AL["Wands"],
 				[NORMAL_DIFF] = {
 					{ 1, 33192 }, -- Carved Witch Doctor Stick
 				},
@@ -337,7 +337,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 
 	--copy/paste from Rootkit for P5 badge items - github issue #199
 	data["BadgeofJusticeP5"] = {
-		name = format(AL["'%s %s' Vendor"], AL["Badge of Justice"], "P5"),
+		name = format(AL["P5'%s' Vendor"], AL["Badge of Justice"], "P5"),
 		ContentType = VENDOR_CONTENT,
 		TableType = NORMAL_ITTYPE,
 		gameVersion = AtlasLoot.BC_VERSION_NUM,
@@ -430,7 +430,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 				},
 			},
 			{
-				name = ALIL["Gem"],
+				name = AL["Gems"],
 				[NORMAL_DIFF] = {
 					{1, 32228},
 					{2, 32249},
@@ -444,7 +444,7 @@ if AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM) then
 	}
 
 	data["BCCSunmote"] = {
-		name = format(AL["'%s' Vendor"], AL["Sunmote"]),
+		name = format(AL["Sunmote Vendor"], AL["Sunmote"]),
 		ContentType = VENDOR_CONTENT,
 		TableType = NORMAL_ITTYPE,
 		gameVersion = AtlasLoot.BC_VERSION_NUM,
