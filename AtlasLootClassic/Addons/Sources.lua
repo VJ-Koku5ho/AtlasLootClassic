@@ -29,6 +29,7 @@ local TOKEN_NUMBER_DUMMY = AtlasLoot.Data.Token.GetTokenDummyNumberRange()
 
 -- locals
 local TT_F = "%s |cFF00ccff%s|r"
+local WHITE_TEXT = "|cffffffff%s|r"
 local DUMMY_ICON = "Interface\\Icons\\INV_Misc_QuestionMark"
 local TEXTURE_ICON_F, TEXTURE_ICON_FN, ATLAS_ICON_F = "|T%s:0|t ", "|T%d:0|t ", "|A:%s:0:0|a "
 local TT_F_PRICE_T, TT_F_PRICE_TN = "|T%s:0|t|cFFffffff%s|r", "|T%d:0|t|cFFffffff%s|r"
@@ -304,7 +305,6 @@ local function OnTooltipSetItem_Hook(self)
                 TooltipTextCache[item][ #TooltipTextCache[item] + 1 ] = GetPriceFormatString(priceInfo[priceSumCount])
             end
         end
-
         if TooltipTextCache[item] then
             if Sources.db.showLineBreak then
                 self:AddLine(" ")
@@ -354,6 +354,11 @@ end
 
 function Sources:GetSourceTypes()
     return SOURCE_TYPES
+end
+
+function Sources:ItemSourcesUpdated(itemID)
+    if not itemID then return end
+    TooltipTextCache[itemID] = nil
 end
 
 Sources:Finalize()
