@@ -1671,7 +1671,7 @@ data["CookingBC"] = {
 			},
 		},
 		{
-			name = ALIL["Stamina"].." + "..ALIL["Mana Per 5 Sec."],
+			name = ALIL["Stamina"].." + "..AL["Mana Per 5 Sec."],
 			[NORMAL_DIFF] = {
 				{ 1, 33292 }, -- Blackened Sporefish (310)
 			},

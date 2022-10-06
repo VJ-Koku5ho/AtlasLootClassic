@@ -26,10 +26,10 @@ local GetForVersion = AtlasLoot.ReturnForGameVersion
 
 local NORMAL_DIFF = data:AddDifficulty("NORMAL", nil, nil, nil, true)
 local HEROIC_DIFF = data:AddDifficulty("HEROIC", nil, nil, nil, true)
-local RAID10_DIFF = data:AddDifficulty("10RAID")
-local RAID10H_DIFF = data:AddDifficulty("10RAIDH")
-local RAID25_DIFF = data:AddDifficulty("25RAID")
-local RAID25H_DIFF = data:AddDifficulty("25RAIDH")
+local RAID10_DIFF = data:AddDifficulty(AL["10RAID"])
+local RAID10H_DIFF = data:AddDifficulty(AL["10RAIDH"])
+local RAID25_DIFF = data:AddDifficulty(AL["25RAID"])
+local RAID25H_DIFF = data:AddDifficulty(AL["25RAIDH"])
 
 local VENDOR_DIFF = data:AddDifficulty(AL["Vendor"], "vendor", 0)
 local T10_1_DIFF = data:AddDifficulty(AL["10H / 25 / 25H"], "T10_1", 0)
@@ -1268,6 +1268,7 @@ data["ChildrensWeek"] = {
 	ContentType = WORLD_EVENT_CONTENT,
 	LoadDifficulty = NORMAL_DIFF,
 	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
 	items = {
 		{ -- ChildrensWeek
 			name = AL["Childrens Week"],
@@ -1286,6 +1287,7 @@ data["Valentineday"] = {
 	ContentType = WORLD_EVENT_CONTENT,
 	LoadDifficulty = NORMAL_DIFF,
 	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
 	items = {
 		{ -- Valentineday
 			name = AL["Love is in the Air"],

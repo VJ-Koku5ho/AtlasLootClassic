@@ -1791,7 +1791,7 @@ data["Cooking"] = {
 			},
 		},
 		{
-			name = ALIL["Mana Per 5 Sec."],
+			name = AL["Mana Per 5 Sec."],
 			[NORMAL_DIFF] = {
 				{ 1, 18243 }, --Nightfin Soup / 290
 				{ 2, 25954 }, --Sagefish Delight / 215
@@ -1799,7 +1799,7 @@ data["Cooking"] = {
 			},
 		},
 		{
-			name = ALIL["Health Per 5 Sec."],
+			name = AL["Health Per 5 Sec."],
 			[NORMAL_DIFF] = {
 				{ 1, 18244 }, --Poached Sunscale Salmon / 290
 			},

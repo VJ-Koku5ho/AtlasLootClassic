@@ -27,10 +27,10 @@ local GetForVersion = AtlasLoot.ReturnForGameVersion
 
 local NORMAL_DIFF = data:AddDifficulty("NORMAL", nil, nil, nil, true)
 local HEROIC_DIFF = data:AddDifficulty("HEROIC", nil, nil, nil, true)
-local RAID10_DIFF = data:AddDifficulty("10RAID")
-local RAID10H_DIFF = data:AddDifficulty("10RAIDH")
-local RAID25_DIFF = data:AddDifficulty("25RAID")
-local RAID25H_DIFF = data:AddDifficulty("25RAIDH")
+local RAID10_DIFF = data:AddDifficulty(AL["10RAID"])
+local RAID10H_DIFF = data:AddDifficulty(AL["10RAIDH"])
+local RAID25_DIFF = data:AddDifficulty(AL["25RAID"])
+local RAID25H_DIFF = data:AddDifficulty(AL["25RAIDH"])
 
 local VENDOR_DIFF = data:AddDifficulty(AL["Vendor"], "vendor", 0)
 local T10_1_DIFF = data:AddDifficulty(AL["10H / 25 / 25H"], "T10_1", 0)
@@ -224,7 +224,7 @@ data["EmblemofHeroism"] = {
 			},
 		},
 		{
-			name = ALIL["Misc"],
+			name = AL["Misc"],
 			[NORMAL_DIFF] = {
 				{ 1, AtlasLoot:GetRetByFaction(44231,44230) }, -- Reins of the Wooly Mammoth
 				{ 3, 43102 }, -- Frozen Orb
@@ -600,7 +600,7 @@ data["EmblemofFrost"] = {
 			},
 		},
 		{
-			name = ALIL["Back"],
+			name = AL["Back"],
 			[NORMAL_DIFF] = {
 				{ 1, 50468 }, -- Drape of the Violet Tower
 				{ 2, 50467 }, -- Might of the Ocean Serpent
@@ -660,7 +660,7 @@ data["WorldEpicsWrath"] = {
 	items = {
 		{
 			name = AL["World Epics"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 			{ 1, 44309 },	-- Sash of Jordan
 			{ 2, 44312 },	-- Wapach's Spaulders of Solidarity
 			{ 4, 44308 },	-- Signet of Edward the Odd
@@ -902,7 +902,7 @@ data["LegendarysWrath"] = {
 	items = {
 		{
 			name = AL["Legendarys"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 49623, "ac4623" },	-- Shadowmourne
 				{ 16, 46017, "ac3142" },	-- Val'anyr, Hammer of Ancient Kings
 			},
@@ -919,7 +919,7 @@ data["HeirloomWrath"] = {
 	items = {
 		{
 			name = ALIL["Armor"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 42985 }, -- Tattered Dreadmist Mantle
 				{ 2, 44107 }, -- Exquisite Sunderseer Mantle
 				{ 16, 48691 }, -- Tattered Dreadmist Robe
@@ -946,7 +946,7 @@ data["HeirloomWrath"] = {
 		},
 		{
 			name = ALIL["Weapon"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 44096 }, -- Battleworn Thrash Blade
 				{ 2, 48716 }, -- Venerable Mass of McGowan
 				{ 3, 42944 }, -- Balanced Heartseeker
@@ -971,21 +971,142 @@ data["HeirloomWrath"] = {
 		},
 		{
 			name = ALIL["Trinket"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 42992 }, -- Discerning Eye of the Beast
 				{ 2, 42991 }, -- Swift Hand of Justice
 			},
 		},
 		{
 			name = ALIL["Finger"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 50255 }, -- Dread Pirate Ring
 			},
 		},
 		{
 			name = AL["Misc"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 49177 }, -- Tome of Cold Weather Flight
+			},
+		},
+	},
+}
+
+data["ChildrensWeekWrath"] = {
+	name = AL["Childrens Week"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.WRATH_VERSION_NUM,
+	CorrespondingFields = private.CHILDRENS_WEEK,
+	items = {
+		{ -- ChildrensWeek
+			name = AL["Childrens Week"],
+			[NORMAL_DIFF] = {
+				{ 1,  23007 }, -- Piglet's Collar
+				{ 2,  23015 }, -- Rat Cage
+				{ 3,  23002 }, -- Turtle Box
+				{ 4,  23022 }, -- Curmudgeon's Payoff
+				{ 6,  32616 }, -- Egbert's Egg
+				{ 7,  32617 }, -- Sleepy Willy
+				{ 8,  32622 }, -- Elekk Training Collar
+				{ 10,  46544 }, -- Curious Wolvar Pup
+				{ 11,  46545 }, -- Curious Oracle Hatchling
+			},
+		},
+	},
+}
+
+data["ValentinedayWrath"] = {
+	name = AL["Love is in the Air"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.WRATH_VERSION_NUM,
+	items = {
+		{ -- Valentineday
+			name = AL["Love is in the Air"],
+			[NORMAL_DIFF] = {
+				{ 1,  22206 }, -- Bouquet of Red Roses
+				{ 3, "INV_ValentinesBoxOfChocolates02", nil, AL["Gift of Adoration"] },
+				{ 4,  22279 }, -- Lovely Black Dress
+				{ 5,  22235 }, -- Truesilver Shafted Arrow
+				{ 6,  22200 }, -- Silver Shafted Arrow
+				{ 7,  22261 }, -- Love Fool
+				{ 8,  22218 }, -- Handful of Rose Petals
+				{ 9,  21813 }, -- Bag of Candies
+				{ 11, "INV_Box_02", nil, AL["Box of Chocolates"] },
+				{ 12, 22237 }, -- Dark Desire
+				{ 13, 22238 }, -- Very Berry Cream
+				{ 14, 22236 }, -- Buttermilk Delight
+				{ 15, 22239 }, -- Sweet Surprise
+				{ 16, 22276 }, -- Lovely Red Dress
+				{ 17, 22278 }, -- Lovely Blue Dress
+				{ 18, 22280 }, -- Lovely Purple Dress
+				{ 19, 22277 }, -- Red Dinner Suit
+				{ 20, 22281 }, -- Blue Dinner Suit
+				{ 21, 22282 }, -- Purple Dinner Suit
+			},
+		},
+		{ -- SFKApothecaryH
+			name = C_Map_GetAreaInfo(209).." - "..AL["Apothecary Hummel"],
+			[NORMAL_DIFF] = {
+				{ 1,  51804 }, -- Winking Eye of Love
+				{ 2,  51805 }, -- Heartbreak Charm
+				{ 3,  51806 }, -- Shard of Pirouetting Happiness
+				{ 4,  51807 }, -- Sweet Perfume Broach
+				{ 5,  51808 }, -- Choker of the Pure Heart
+				{ 7,  49641 }, -- Faded Lovely Greeting Card
+				{ 8,  49715 }, -- Forever-Lovely Rose
+				{ 9,  50250 }, -- X-45 Heartbreaker
+				{ 10,  50446 }, -- Toxic Wasteling
+				{ 11,  50471 }, -- The Heartbreaker
+				{ 12,  50741 }, -- Vile Fumigator's Mask
+			},
+		},
+	},
+}
+
+data["MidsummerFestivalWrath"] = {
+	name = AL["Midsummer Festival"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.WRATH_VERSION_NUM,
+	CorrespondingFields = private.MIDSUMMER_FESTIVAL,
+	items = {
+		{ -- MidsummerFestivalWrath
+			name = AL["Midsummer Festival"],
+			[NORMAL_DIFF] = {
+				{ 1,  23083 }, -- Captured Flame
+				{ 2,  34686 }, -- Brazier of Dancing Flames
+				{ 4,  23324 }, -- Mantle of the Fire Festival
+				{ 5,  23323 }, -- Crown of the Fire Festival
+				{ 6,  34683 }, -- Sandals of Summer
+				{ 7,  34685 }, -- Vestment of Summer
+				{ 9,  23247 }, -- Burning Blossom
+				{ 10,  34599 }, -- Juggling Torch
+				{ 11,  34684 }, -- Handful of Summer Petals
+				{ 12,  23246 }, -- Fiery Festival Brew
+				{ 16, 23215 }, -- Bag of Smorc Ingredients
+				{ 17, 23211 }, -- Toasted Smorc
+				{ 18,  23435 }, -- Elderberry Pie
+				{ 19, 23327 }, -- Fire-toasted Bun
+				{ 20, 23326 }, -- Midsummer Sausage
+			},
+		},
+		{ -- CFRSlaveAhune
+			name = C_Map_GetAreaInfo(3717).." - "..AL["Ahune"],
+			[NORMAL_DIFF] = {
+                { 1, 54806 }, -- Frostscythe of Lord Ahune
+                { 2, 54804 }, -- Shroud of Winter's Chill
+                { 3, 54802 }, -- The Frost Lord's War Cloak
+                { 4, 54801 }, -- Icebound Cloak
+                { 5, 54805 }, -- Cloak of the Frigid Winds
+                { 6, 54803 }, -- The Frost Lord's Battle Shroud
+                { 8, 35723 }, -- Shards of Ahune
+                { 16, 35498 }, -- Formula: Enchant Weapon - Deathfrost
+                { 18, 34955 }, -- Scorched Stone
+                { 19, 35557 }, -- Huge Snowball
 			},
 		},
 	},
@@ -1049,11 +1170,11 @@ data["HalloweenWrath"] = {
 		{ -- SMHeadlessHorseman
 			name = AL["Headless Horseman"],
 			[NORMAL_DIFF] = {
-                { 1, 34075 }, -- Ring of Ghoulish Delight
-                { 2, 34073 }, -- The Horseman's Signet Ring
-                { 3, 34074 }, -- Witches Band
-                { 5, 33808 }, -- The Horseman's Helm
-                { 6, 38175 }, -- The Horseman's Blade
+                { 1, 49121 }, -- Ring of Ghoulish Glee
+                { 2, 49123 }, -- The Horseman's Seal
+                { 3, 49124 }, -- Wicked Witch's Band
+                { 5, 49126 }, -- The Horseman's Horrific Helm
+                { 6, 49128 }, -- The Horseman's Baleful Blade
                 { 8, 33292 }, -- Hallowed Helm
                 { 10, 34068 }, -- Weighted Jack-o'-Lantern
                 { 12, 33277 }, -- Tome of Thomas Thomson
@@ -1108,7 +1229,7 @@ data["ScourgeInvasionWrath"] = {
 			},
 		},
 		{
-			name = C_Map_GetAreaInfo(2017).." - "..AL["Prince Tenris Mirkblood"],
+			name = C_Map_GetAreaInfo(3457).." - "..AL["Prince Tenris Mirkblood"],
 			[NORMAL_DIFF] = {
 				{ 1,  38658 }, -- Vampiric Batling
 				{ 2,  39769 }, -- Arcanite Ripper

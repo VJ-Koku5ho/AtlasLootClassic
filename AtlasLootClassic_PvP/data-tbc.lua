@@ -1116,7 +1116,7 @@ data["ArenaS4PvP"] = {
 			},
 		},
 		AtlasLoot:GameVersion_GE(AtlasLoot.WRATH_VERSION_NUM, {
-			name = ALIL["Back"],
+			name = AL["Back"],
 			[NORMAL_DIFF] = {
 				{ 1, 44431 }, -- Cloak of Certain Reprieve
 				{ 2, 41591 }, --  Sergeant's Reinforced Cape

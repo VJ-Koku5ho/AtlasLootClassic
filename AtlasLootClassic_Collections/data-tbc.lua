@@ -288,7 +288,7 @@ data["BadgeofJustice4"] = {
 			},
 		},
 		{
-			name = ALIL["Back"],
+			name = AL["Back"],
 			[NORMAL_DIFF] = {
 				{ 1, 33593 },
 				{ 2, 35321 },
@@ -327,7 +327,7 @@ data["BadgeofJustice4"] = {
 			},
 		},
 		{
-			name = ALIL["Wand"],
+			name = AL["Wand"],
 			[NORMAL_DIFF] = {
 				{ 1, 33192 }, -- Carved Witch Doctor Stick
 			},
@@ -430,7 +430,7 @@ data["BadgeofJusticeP5"] = {
 			},
 		},
 		{
-			name = ALIL["Gem"],
+			name = AL["Gem"],
 			[NORMAL_DIFF] = {
 				{1, 32228},
 				{2, 32249},
@@ -514,7 +514,7 @@ data["WorldEpicsBC"] = {
 	items = {
 		{
 			name = AL["One-Handed Weapons"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 31331 }, -- The Night Blade
 				{ 3, 31332 }, -- Blinkstrike
 				{ 16, 31336 }, -- Blade of Wizardry
@@ -523,7 +523,7 @@ data["WorldEpicsBC"] = {
 		},
 		{
 			name = AL["Two-Handed Weapons"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 31318 }, -- Singing Crystal Axe
 				{ 16, 31322 }, -- The Hammer of Destiny
 				{ 18, 31334 }, -- Staff of Natural Fury
@@ -531,14 +531,14 @@ data["WorldEpicsBC"] = {
 		},
 		{
 			name = AL["Ranged Weapons"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 31323 }, -- Don Santos' Famous Hunting Rifle
 				{ 16, 34622 }, -- Spinesever
 			}
 		},
 		{
 			name = ALIL["Trinket"].." & "..ALIL["Finger"].." & "..ALIL["Neck"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 31339 }, -- Lola's Eve
 				{ 3, 31319 }, -- Band of Impenetrable Defenses
 				{ 4, 31326 }, -- Truestrike Ring
@@ -548,7 +548,7 @@ data["WorldEpicsBC"] = {
 		},
 		{
 			name = AL["Equip"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1, 31329 }, -- Lifegiving Cloak
 				{ 3, 31340 }, -- Will of Edward the Odd
 				{ 4, 31343 }, -- Kamaei's Cerulean Skirt
@@ -836,7 +836,7 @@ data["LegendarysBC"] = {
 	items = {
 		{
 			name = AL["Legendarys"],
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1,  34334 }, -- Thori'dal, the Stars' Fury
 
 				{ 16,  32837 }, -- Warglaive of Azzinoth
@@ -845,7 +845,7 @@ data["LegendarysBC"] = {
 		},
 		{
 			MapID = 3845,
-			[NORMAL_ITTYPE] = {
+			[NORMAL_DIFF] = {
 				{ 1,  30312 }, -- Infinity Blade
 				{ 2,  30311 }, -- Warp Slicer
 				{ 3,  30317 }, -- Cosmic Infuser
@@ -859,12 +859,36 @@ data["LegendarysBC"] = {
 	},
 }
 
+data["ChildrensWeekBC"] = {
+	name = AL["Childrens Week"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.BC_VERSION_NUM,
+	CorrespondingFields = private.CHILDRENS_WEEK,
+	items = {
+		{ -- ChildrensWeek
+			name = AL["Childrens Week"],
+			[NORMAL_DIFF] = {
+				{ 1,  23007 }, -- Piglet's Collar
+				{ 2,  23015 }, -- Rat Cage
+				{ 3,  23002 }, -- Turtle Box
+				{ 4,  23022 }, -- Curmudgeon's Payoff
+				{ 6,  32616 }, -- Egbert's Egg
+				{ 7,  32617 }, -- Sleepy Willy
+				{ 8,  32622 }, -- Elekk Training Collar
+			},
+		},
+	},
+}
+
 data["MidsummerFestivalBC"] = {
 	name = AL["Midsummer Festival"],
 	ContentType = WORLD_EVENT_CONTENT,
 	LoadDifficulty = NORMAL_DIFF,
 	TableType = NORMAL_ITTYPE,
 	gameVersion = AtlasLoot.BC_VERSION_NUM,
+	CorrespondingFields = private.MIDSUMMER_FESTIVAL,
 	items = {
 		{ -- MidsummerFestivalTBC
 			name = AL["Midsummer Festival"],
@@ -975,7 +999,7 @@ data["HalloweenBC"] = {
 			},
 		},
 		{ -- SMHeadlessHorseman
-			name = AL["Headless Horseman"],
+			name = C_Map_GetAreaInfo(796).." - "..AL["Headless Horseman"],
 			[NORMAL_DIFF] = {
                 { 1, 34075 }, -- Ring of Ghoulish Delight
                 { 2, 34073 }, -- The Horseman's Signet Ring
