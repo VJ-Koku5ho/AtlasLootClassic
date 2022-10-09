@@ -1083,6 +1083,9 @@ data["JewelcraftingWrath"] = {
 				{ 6, 64726 },	-- Sky Sapphire Amulet
 				{ 7, 56196 },	-- Blood Sun Necklace
 				{ 8, 56195 },	-- Jade Dagger Pendant
+				{ 9, 63743 },   -- Amulet of Truesight
+				{ 11, 58141 },  -- Crystal Citrine Necklace
+				{ 12, 58142 },  -- Crystal Chalcedony Amulet
 			}
 		},
 		{
@@ -1154,18 +1157,24 @@ data["JewelcraftingWrath"] = {
 				{ 4, 66453 },	-- Flashing Cardinal Ruby
 				{ 5, 66450 },	-- Precise Cardinal Ruby
 				{ 6, 66449 },	-- Bright Cardinal Ruby
-				{ 8, 53830 },	-- Bold Scarlet Ruby
-				{ 9, 53946 },	-- Runed Scarlet Ruby
-				{ 10, 53945 },	-- Delicate Scarlet Ruby
-				{ 11, 53949 },	-- Flashing Scarlet Ruby
-				{ 12, 53951 },	-- Precise Scarlet Ruby
-				{ 13, 53947 },	-- Bright Scarlet Ruby
-				{ 16, 53831 },	-- Bold Bloodstone
-				{ 17, 53834 },	-- Runed Bloodstone
-				{ 18, 53832 },	-- Delicate Bloodstone
-				{ 19, 53844 },	-- Flashing Bloodstone
-				{ 20, 54017 },	-- Precise Bloodstone
-				{ 21, 53835 },	-- Bright Bloodstone
+				{ 7, 66451 },   -- Fractured Cardinal Ruby
+				{ 8, 66452 },   -- Subtle Cardinal Ruby
+				{ 16, 53830 },	-- Bold Scarlet Ruby
+				{ 17, 53946 },	-- Runed Scarlet Ruby
+				{ 18, 53945 },	-- Delicate Scarlet Ruby
+				{ 19, 53949 },	-- Flashing Scarlet Ruby
+				{ 20, 53951 },	-- Precise Scarlet Ruby
+				{ 21, 53947 },	-- Bright Scarlet Ruby
+				{ 22, 53950 },  -- Fractured Scarlet Ruby
+				{ 23, 53948 },  -- Subtle Scarlet Ruby
+				{ 101, 53831 },	-- Bold Bloodstone
+				{ 102, 53834 },	-- Runed Bloodstone
+				{ 103, 53832 },	-- Delicate Bloodstone
+				{ 104, 53844 },	-- Flashing Bloodstone
+				{ 105, 54017 },	-- Precise Bloodstone
+				{ 106, 53835 },	-- Bright Bloodstone
+				{ 107, 53845 }, -- Fractured Bloodstone
+				{ 108, 53843 }, -- Subtle Bloodstone
 			}
 		},
 		{
@@ -1211,42 +1220,72 @@ data["JewelcraftingWrath"] = {
 		{
 			name = format(GEM_FORMAT1, AL["Orange"]),
 			[NORMAL_DIFF] = {
-				{ 1, 66579 },	-- Champion's Ametrine
-				{ 2, 66568 },	-- Deadly Ametrine
-				{ 3, 66584 },	-- Deft Ametrine
-				{ 4, 66583 },	-- Fierce Ametrine
-				{ 5, 66567 },	-- Inscribed Ametrine
-				{ 6, 66585 },	-- Lucent Ametrine
-				{ 7, 66569 },	-- Potent Ametrine
-				{ 8, 66574 },	-- Reckless Ametrine
-				{ 9, 66586 },	-- Resolute Ametrine
-				{ 10, 66582 },	-- Resplendent Ametrine
-				{ 11, 66581 },	-- Stalwart Ametrine
-				{ 12, 66571 },	-- Willful Ametrine
-				{ 16, 53977 },	-- Champion's Monarch Topaz
-				{ 17, 53979 },	-- Deadly Monarch Topaz
-				{ 18, 53991 },	-- Deft Monarch Topaz
-				{ 19, 54019 },	-- Fierce Monarch Topaz
-				{ 20, 53975 },	-- Inscribed Monarch Topaz
-				{ 21, 53981 },	-- Lucent Monarch Topaz
-				{ 22, 53984 },	-- Potent Monarch Topaz
-				{ 23, 53987 },	-- Reckless Monarch Topaz
-				{ 24, 54023 },	-- Resolute Monarch Topaz
-				{ 25, 53978 },	-- Resplendent Monarch Topaz
-				{ 26, 53993 },	-- Stalwart Monarch Topaz
-				{ 27, 53986 },	-- Willful Monarch Topaz
-				{ 101, 53874 },	-- Champion's Huge Citrine
-				{ 102, 53877 },	-- Deadly Huge Citrine
-				{ 103, 53880 },	-- Deft Huge Citrine
-				{ 104, 53876 },	-- Fierce Huge Citrine
-				{ 105, 53872 },	-- Inscribed Huge Citrine
-				{ 106, 53879 },	-- Lucent Huge Citrine
-				{ 107, 53882 },	-- Potent Huge Citrine
-				{ 108, 53885 },	-- Reckless Huge Citrine
-				{ 109, 53893 },	-- Resolute Huge Citrine
-				{ 110, 53875 },	-- Resplendent Huge Citrine
-				{ 111, 53891 },	-- Stalwart Huge Citrine
-				{ 112, 53884 },	-- Willful Huge Citrine
+				{ 1, 66576 },   -- Accurate Ametrine
+				{ 2, 66579 },	-- Champion's Ametrine
+				{ 3, 66568 },	-- Deadly Ametrine
+				{ 4, 66584 },	-- Deft Ametrine
+				{ 5, 66571 },	-- Durable Ametrine
+				{ 6, 66580 },	-- Empowered Ametrine
+				{ 7, 66572 },	-- Etched Ametrine
+				{ 8, 66583 },	-- Fierce Ametrine
+				{ 9, 66578 },   -- Glimmering Ametrine
+				{ 10, 66575 },  -- Glinting Ametrine
+				{ 11, 66567 },	-- Inscribed Ametrine
+				{ 12, 66585 },	-- Lucent Ametrine
+				{ 13, 66566 },  -- Luminous Ametrine
+				{ 14, 66569 },	-- Potent Ametrine
+				{ 15, 66573 },	-- Pristine Ametrine
+				{ 16, 66574 },	-- Reckless Ametrine
+				{ 17, 66586 },	-- Resolute Ametrine
+				{ 18, 66582 },	-- Resplendent Ametrine
+				{ 19, 66581 },	-- Stalwart Ametrine
+				{ 20, 66587 },  -- Stark Ametrine
+				{ 21, 66570 },  -- Veiled Ametrine
+				{ 22, 66577 },	-- Wicked Ametrine
+				{ 101, 53994 }, -- Accurate Monarch Topaz
+				{ 102, 53977 },	-- Champion's Monarch Topaz
+				{ 103, 53979 },	-- Deadly Monarch Topaz
+				{ 104, 53982 },	-- Deft Monarch Topaz
+				{ 105, 53986 },	-- Durable Monarch Topaz
+				{ 106, 53990 },	-- Empowered Monarch Topaz
+				{ 107, 53976 }, -- Etched Monarch Topaz
+				{ 108, 54019 },	-- Fierce Monarch Topaz
+				{ 109, 53993 }, -- Glimmering Monarch Topaz
+				{ 110, 53980 }, -- Glinting Monarch Topaz
+				{ 111, 53975 },	-- Inscribed Monarch Topaz
+				{ 112, 53981 },	-- Lucent Monarch Topaz
+				{ 113, 53983 }, -- Luminous Monarch Topaz
+				{ 114, 53984 },	-- Potent Monarch Topaz
+				{ 115, 53989 }, -- Pristine Monarch Topaz
+				{ 116, 53987 },	-- Reckless Monarch Topaz
+				{ 117, 54023 },	-- Resolute Monarch Topaz
+				{ 118, 53978 },	-- Resplendent Monarch Topaz
+				{ 119, 53992 },	-- Stalwart Monarch Topaz
+				{ 120, 53991 }, -- Stark Monarch Topaz
+				{ 121, 53985 }, -- Veiled Monarch Topaz
+				{ 122, 53988 }, -- Wicked Monarch Topaz
+				{ 201, 53892 }, -- Accurate Huge Citrine
+				{ 202, 53874 },	-- Champion's Huge Citrine
+				{ 203, 53877 },	-- Deadly Huge Citrine
+				{ 204, 53880 },	-- Deft Huge Citrine
+				{ 205, 53884 }, -- Durable Huge Citrine
+				{ 206, 53888 }, -- Empowered Huge Citrine
+				{ 207, 53873 }, -- Etched Huge Citrine
+				{ 208, 53876 },	-- Fierce Huge Citrine
+				{ 209, 53891 }, -- Glimmering Huge Citrine
+				{ 210, 53878 }, -- Glinting Huge Citrine
+				{ 211, 53872 },	-- Inscribed Huge Citrine
+				{ 212, 53879 },	-- Lucent Huge Citrine
+				{ 213, 53881 }, -- Luminous Huge Citrine
+				{ 214, 53882 },	-- Potent Huge Citrine
+				{ 215, 53887 }, -- Prisinte Huge Citrine
+				{ 216, 53885 },	-- Reckless Huge Citrine
+				{ 217, 53893 },	-- Resolute Huge Citrine
+				{ 218, 53875 },	-- Resplendent Huge Citrine
+				{ 219, 53890 },	-- Stalwart Huge Citrine
+				{ 220, 53889 }, -- Stark Huge Citrine
+				{ 221, 53883 },	-- Veiled Huge Citrine
+				{ 222, 53886 }, -- Wicked Huge Citrine
 			}
 		},
 		{
@@ -1255,36 +1294,60 @@ data["JewelcraftingWrath"] = {
 				{ 1, 66442 },	-- Energized Eye of Zul
 				{ 2, 66434 },	-- Forceful Eye of Zul
 				{ 3, 66431 },	-- Jagged Eye of Zul
-				{ 4, 66439 },	-- Lightning Eye of Zul
+				{ 4, 66439 },	-- Lambent Eye of Zul
 				{ 5, 66435 },	-- Misty Eye of Zul
-				{ 6, 66429 },	-- Nimble Eye of Zul
+				{ 6, 66429 },	-- Vivid Eye of Zul
 				{ 7, 66441 },	-- Radiant Eye of Zul
-				{ 8, 66338 },	-- Regal Eye of Zul
+				{ 8, 66338 },	-- Enduring Eye of Zul
 				{ 9, 66443 },	-- Shattered Eye of Zul
 				{ 10, 66428 },	-- Steady Eye of Zul
 				{ 11, 66445 },	-- Turbid Eye of Zul
-				{ 16, 54011 },	-- Energized Forest Emerald
-				{ 17, 54001 },	-- Forceful Forest Emerald
-				{ 18, 53996 },	-- Jagged Forest Emerald
-				{ 19, 54009 },	-- Lightning Forest Emerald
-				{ 20, 54003 },	-- Misty Forest Emerald
-				{ 21, 53997 },	-- Nimble Forest Emerald
-				{ 22, 54012 },	-- Radiant Forest Emerald
-				{ 23, 53998 },	-- Regal Forest Emerald
-				{ 24, 54014 },	-- Shattered Forest Emerald
-				{ 25, 54000 },	-- Steady Forest Emerald
-				{ 26, 54005 },	-- Turbid Forest Emerald
-				{ 101, 53925 },	-- Energized Dark Jade
-				{ 102, 53920 },	-- Forceful Dark Jade
-				{ 103, 53916 },	-- Jagged Dark Jade
-				{ 104, 53923 },	-- Lightning Dark Jade
-				{ 105, 53922 },	-- Misty Dark Jade
-				{ 106, 53917 },	-- Nimble Dark Jade
-				{ 107, 53932 },	-- Radiant Dark Jade
-				{ 108, 53918 },	-- Regal Dark Jade
-				{ 109, 53933 },	-- Shattered Dark Jade
-				{ 110, 53919 },	-- Steady Dark Jade
-				{ 111, 53924 },	-- Turbid Dark Jade
+				{ 12, 66436 },  -- Sundered Eye of Zul
+				{ 13, 66432 },  -- Timeless Eye of Zul
+				{ 14, 66440 },  -- Intricate Eye of Zul
+				{ 15, 66433 },  -- Seer's Eye of Zul
+				{ 16, 66444 },  -- Opaque Eye of Zul
+				{ 17, 66438 },  -- Tense Eye of Zul
+				{ 18, 66430 },  -- Dazzling Eye of Zul
+				{ 19, 66437 },  -- Shining Eye of Zul
+				{ 101, 54011 },	-- Energized Forest Emerald
+				{ 102, 54001 },	-- Forceful Forest Emerald
+				{ 103, 53996 },	-- Jagged Forest Emerald
+				{ 104, 54009 },	-- Lambent Forest Emerald
+				{ 105, 54003 },	-- Misty Forest Emerald
+				{ 106, 53997 },	-- Vivid Forest Emerald
+				{ 107, 54012 },	-- Radiant Forest Emerald
+				{ 108, 53998 },	-- Enduring Forest Emerald
+				{ 109, 54014 },	-- Shattered Forest Emerald
+				{ 110, 54000 },	-- Steady Forest Emerald
+				{ 111, 54005 },	-- Turbid Forest Emerald
+				{ 112, 54008 }, -- Sundered Forest Emerald
+				{ 113, 53995 }, -- Timeless Forest Emerald
+				{ 114, 54006 }, -- Intricate Forest Emerald
+				{ 115, 54002 }, -- Seer's Forest Emerald
+				{ 116, 54010 }, -- Opaque Forest Emerald
+				{ 117, 54013 }, -- Tense Forest Emerald
+				{ 118, 54007 }, -- Dazzling Forest Emerald
+				{ 119, 54004 }, -- Shining Forest Emerald
+				{ 201, 53930 },	-- Energized Dark Jade
+				{ 202, 53920 },	-- Forceful Dark Jade
+				{ 203, 53916 },	-- Jagged Dark Jade
+				{ 204, 53928 },	-- Lambent Dark Jade
+				{ 205, 53922 },	-- Misty Dark Jade
+				{ 206, 53917 },	-- Vivid Dark Jade
+				{ 207, 53931 },	-- Radiant Dark Jade
+				{ 208, 53918 },	-- Enduring Dark Jade
+				{ 209, 53933 },	-- Shattered Dark Jade
+				{ 210, 53919 },	-- Steady Dark Jade
+				{ 211, 53924 },	-- Turbid Dark Jade
+				{ 212, 53927 }, -- Sundered Dark Jade
+				{ 213, 53894 }, -- Timeless Dark Jade
+				{ 214, 53925 }, -- Intricate Dark Jade
+				{ 215, 53921 }, -- Seer's Dark Jade
+				{ 216, 53929 }, -- Opaque Dark Jade
+				{ 217, 53932 }, -- Tense Dark Jade
+				{ 218, 53926 }, -- Dazzling Dark Jade
+				{ 219, 53923 }, -- Shining Dark Jade
 			}
 		},
 		{
@@ -1334,9 +1397,9 @@ data["JewelcraftingWrath"] = {
 		{
 			name = format(GEM_FORMAT1, AL["Prismatic"]),
 			[NORMAL_DIFF] = {
-				{ 1, 56530 }, -- Enchanted Pearl
+				{ 1, 68253 }, -- Nightmare Tear
 				{ 2, 56531 }, -- Enchanted Tear
-				{ 3, 68253 }, -- Nightmare Tear
+				{ 3, 56530 }, -- Enchanted Pearl
 			}
 		},
 		{

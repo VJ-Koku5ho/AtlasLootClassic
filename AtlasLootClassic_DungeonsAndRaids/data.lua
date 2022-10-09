@@ -1372,6 +1372,7 @@ data["ScarletMonasteryLibrary"] = {
 				{ 2,  7713 }, -- Illusionary Rod
 				{ 4,  7712 }, -- Mantle of Doan
 				{ 5,  7711 }, -- Robe of Doan
+				AtlasLoot:GameVersion_GE(AtlasLoot.BC_VERSION_NUM, { 16,  34227 }), -- Deadman's Hand
 			},
 		},
 		{ -- SMLTrash
@@ -6652,7 +6653,7 @@ data["TheTempleofAhnQiraj"] = { -- AQ40
 
 data["Naxxramas"] = {
 	MapID = 3456,
-	InstanceID = 533,
+	--InstanceID = 533,
 	AtlasModule = ATLAS_MODULE_NAME,
 	AtlasMapID = "Naxxramas",
 	AtlasMapFile = "CL_Naxxramas",

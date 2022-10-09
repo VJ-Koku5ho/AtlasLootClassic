@@ -1029,6 +1029,7 @@ data["Gundrak"] = {
             [NORMAL_DIFF] = {
                 { 1, 35594 }, -- Snowmelt Silken Cinch
 		        { 2, 35593 }, -- Steel Bear Trap Bracers
+                { 3, 37646 }, -- Burning Skull Pendant
             },
             [HEROIC_DIFF] = {
                 { 1, 37647 }, -- Cloak of Bloodied Waters
@@ -3391,9 +3392,8 @@ data["ObsidianSanctum"] = {
                 { 1, 40428 }, -- Titan's Outlook
                 { 2, 40427 }, -- Circle of Arcane Streams
                 { 3, 40426 }, -- Signet of the Accord
-                { 4, 40433 }, -- Wyrmrest Band
-                { 5, 40430 }, -- Majestic Dragon Figurine
-                { 6, 40429 }, -- Crimson Steel
+                { 4, 40430 }, -- Majestic Dragon Figurine
+                { 5, 40429 }, -- Crimson Steel
                 { 16, 40613 }, -- Gloves of the Lost Conqueror
                 { 17, 40614 }, -- Gloves of the Lost Protector
                 { 18, 40615 }, -- Gloves of the Lost Vanquisher
