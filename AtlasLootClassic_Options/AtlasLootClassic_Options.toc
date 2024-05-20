@@ -1,6 +1,6 @@
-﻿## Interface: 30400
+## Interface: 40400
 ## Author: Lag
-## Version: v3.0.2
+## Version: v4.0.0-alpha0
 ## Dependencies: AtlasLootClassic
 ## LoadOnDemand: 1
 
@@ -10,7 +10,7 @@
 ## Notes: AtlasLoot options module
 ## Notes-zhCN: AtlasLoot t选项模块
 ## Notes-zhTW: AtlasLootClassic - Options |n副本戰利品查詢的選項設定。
-## DefaultState: disabled
+## DefaultState: Enabled
 
 ## X-Category: Map
 ## X-License: GPL v2

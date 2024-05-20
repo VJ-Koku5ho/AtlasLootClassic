@@ -1,6 +1,6 @@
-﻿## Interface: 11403
+## Interface: 11404
 ## Author: Lag
-## Version: v3.0.2
+## Version: v4.0.0-alpha0
 ## Dependencies: AtlasLootClassic
 ## LoadOnDemand: 1
 
@@ -10,8 +10,9 @@
 ## Notes: AtlasLoot data module
 ## Notes-zhCN: AtlasLoot 数据模块
 ## Notes-zhTW: AtlasLootClassic - Data |n資料模組。
-## DefaultState: disabled	
-					 
+## DefaultState: Enabled		
+
+
 ## X-Category: Map
 ## X-License: GPL v2
 

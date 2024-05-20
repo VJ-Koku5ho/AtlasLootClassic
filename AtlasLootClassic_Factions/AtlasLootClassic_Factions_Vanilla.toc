@@ -1,6 +1,6 @@
-﻿## Interface: 11403
+## Interface: 11404
 ## Author: Lag
-## Version: v3.0.2
+## Version: v4.0.0-alpha0
 ## Dependencies: AtlasLootClassic
 ## LoadOnDemand: 1
 
@@ -10,7 +10,8 @@
 ## Notes: AtlasLoot loot tables from Factions
 ## Notes-zhCN: AtlasLoot 阵营掉落列表
 ## Notes-zhTW: AtlasLootClassic - Factions |n陣營物品資料庫。
-## DefaultState: disabled
+## DefaultState: Enabled
+
 
 ## X-Category: Map
 ## X-License: GPL v2

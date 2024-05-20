@@ -1,6 +1,6 @@
-﻿## Interface: 30400
+## Interface: 40400
 ## Author: Lag
-## Version: v3.0.2
+## Version: v4.0.0-alpha0
 ## Dependencies: AtlasLootClassic
 ## LoadOnDemand: 1
 
@@ -10,7 +10,7 @@
 ## Notes: AtlasLoot loot tables from PvP
 ## Notes-zhCN: AtlasLoot  PvP掉落列表
 ## Notes-zhTW: AtlasLootClassic - PvP |nPvP 物品資料庫。
-## DefaultState: disabled
+## DefaultState: Enabled
 
 ## X-Category: Map
 ## X-License: GPL v2
@@ -23,3 +23,4 @@ private.lua
 data.lua
 data-tbc.lua
 data-wrath.lua
+data-cata.lua

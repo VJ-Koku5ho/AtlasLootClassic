@@ -26,10 +26,10 @@ local GetForVersion = AtlasLoot.ReturnForGameVersion
 
 local NORMAL_DIFF = data:AddDifficulty("NORMAL", nil, nil, nil, true)
 local HEROIC_DIFF = data:AddDifficulty("HEROIC", nil, nil, nil, true)
-local RAID10_DIFF = data:AddDifficulty(AL["10RAID"])
-local RAID10H_DIFF = data:AddDifficulty(AL["10RAIDH"])
-local RAID25_DIFF = data:AddDifficulty(AL["25RAID"])
-local RAID25H_DIFF = data:AddDifficulty(AL["25RAIDH"])
+local RAID10_DIFF = data:AddDifficulty("10RAID")
+local RAID10H_DIFF = data:AddDifficulty("10RAIDH")
+local RAID25_DIFF = data:AddDifficulty("25RAID")
+local RAID25H_DIFF = data:AddDifficulty("25RAIDH")
 
 local VENDOR_DIFF = data:AddDifficulty(AL["Vendor"], "vendor", 0)
 local T10_1_DIFF = data:AddDifficulty(AL["10H / 25 / 25H"], "T10_1", 0)
@@ -53,6 +53,7 @@ local QUEST_EXTRA_ITTYPE = data:AddExtraItemTableType("Quest")
 local PRICE_EXTRA_ITTYPE = data:AddExtraItemTableType("Price")
 local SET_EXTRA_ITTYPE = data:AddExtraItemTableType("Set")
 
+local SOD_CONTENT = data:AddContentType(AL["SoD Exclusives"], ATLASLOOT_RAID20_COLOR)
 local VENDOR_CONTENT = data:AddContentType(AL["Vendor"], ATLASLOOT_DUNGEON_COLOR)
 local SET_CONTENT = data:AddContentType(AL["Sets"], ATLASLOOT_PVP_COLOR)
 --local WORLD_BOSS_CONTENT = data:AddContentType(AL["World Bosses"], ATLASLOOT_WORLD_BOSS_COLOR)
@@ -971,10 +972,9 @@ data["Companions"] = {
 			name = AL["Quest"],
 			[NORMAL_DIFF] = {
 				{ 1, 12264 }, -- Worg Carrier
-				{ 2, 23002 }, -- Turtle Box
-				{ 3, 11474 }, -- Sprite Darter Egg
-				{ 4, 12529 }, -- Smolderweb Carrier
-				{ 5, 10398 }, -- Mechanical Chicken
+				{ 2, 11474 }, -- Sprite Darter Egg
+				{ 3, 12529 }, -- Smolderweb Carrier
+				{ 4, 10398 }, -- Mechanical Chicken
 			},
 		},
 		{
@@ -1013,6 +1013,7 @@ data["Companions"] = {
 				{ 20, 23015 }, -- Rat Cage
 				{ 21, 22781 }, -- Polar Bear Collar
 				{ 22, 23007 }, -- Piglet's Collar
+				{ 23, 23002 }, -- Turtle Box
 			},
 		},
 		{ -- Unobtainable
@@ -1263,20 +1264,69 @@ data["FishingExtravaganza"] = {
 	},
 }
 
-data["ChildrensWeek"] = {
-	name = AL["Childrens Week"],
+data["LunarFestival"] = {
+	name = AL["Lunar Festival"],
 	ContentType = WORLD_EVENT_CONTENT,
 	LoadDifficulty = NORMAL_DIFF,
 	TableType = NORMAL_ITTYPE,
-	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
 	items = {
-		{ -- ChildrensWeek
-			name = AL["Childrens Week"],
+		{ -- LunarFestival1
+			name = AL["Lunar Festival"],
 			[NORMAL_DIFF] = {
-				{ 1,  23007 }, -- Piglet's Collar
-				{ 2,  23015 }, -- Rat Cage
-				{ 3,  23002 }, -- Turtle Box
-				{ 4,  23022 }, -- Curmudgeon's Payoff
+				{ 1,  21100 }, -- Coin of Ancestry
+				{ 3,  21157 }, -- Festive Green Dress
+				{ 4,  21538 }, -- Festive Pink Dress
+				{ 5,  21539 }, -- Festive Purple Dress
+				{ 6,  21541 }, -- Festive Black Pant Suit
+				{ 7,  21544 }, -- Festive Blue Pant Suit
+				{ 8,  21543 }, -- Festive Teal Pant Suit
+			},
+		},
+		{
+			name = AL["Lunar Festival Fireworks Pack"],
+			[NORMAL_DIFF] = {
+				{ 1, 21558 }, -- Small Blue Rocket
+				{ 2, 21559 }, -- Small Green Rocket
+				{ 3, 21557 }, -- Small Red Rocket
+				{ 4, 21561 }, -- Small White Rocket
+				{ 5, 21562 }, -- Small Yellow Rocket
+				{ 7, 21537 }, -- Festival Dumplings
+				{ 8, 21713 }, -- Elune's Candle
+				{ 16, 21589 }, -- Large Blue Rocket
+				{ 17, 21590 }, -- Large Green Rocket
+				{ 18, 21592 }, -- Large Red Rocket
+				{ 19, 21593 }, -- Large White Rocket
+				{ 20, 21595 }, -- Large Yellow Rocket
+			}
+		},
+		{
+			name = AL["Lucky Red Envelope"],
+			[NORMAL_DIFF] = {
+				{ 1, 21540 }, -- Elune's Lantern
+				{ 2, 21536 }, -- Elune Stone
+				{ 16, 21744 }, -- Lucky Rocket Cluster
+				{ 17, 21745 }, -- Elder's Moonstone
+			}
+		},
+		{ -- LunarFestival2
+			name = AL["Plans"],
+			[NORMAL_DIFF] = {
+				{ 1,  21722 }, -- Pattern: Festival Dress
+				{ 3,  21738 }, -- Schematic: Firework Launcher
+				{ 5,  21724 }, -- Schematic: Small Blue Rocket
+				{ 6,  21725 }, -- Schematic: Small Green Rocket
+				{ 7,  21726 }, -- Schematic: Small Red Rocket
+				{ 9, 21727 }, -- Schematic: Large Blue Rocket
+				{ 10, 21728 }, -- Schematic: Large Green Rocket
+				{ 11, 21729 }, -- Schematic: Large Red Rocket
+				{ 16, 21723 }, -- Pattern: Festive Red Pant Suit
+				{ 18, 21737 }, -- Schematic: Cluster Launcher
+				{ 20, 21730 }, -- Schematic: Blue Rocket Cluster
+				{ 21, 21731 }, -- Schematic: Green Rocket Cluster
+				{ 22, 21732 }, -- Schematic: Red Rocket Cluster
+				{ 24, 21733 }, -- Schematic: Large Blue Rocket Cluster
+				{ 25, 21734 }, -- Schematic: Large Green Rocket Cluster
+				{ 26, 21735 }, -- Schematic: Large Red Rocket Cluster
 			},
 		},
 	},
@@ -1311,6 +1361,90 @@ data["Valentineday"] = {
 				{ 19, 22277 }, -- Red Dinner Suit
 				{ 20, 22281 }, -- Blue Dinner Suit
 				{ 21, 22282 }, -- Purple Dinner Suit
+			},
+		},
+	},
+}
+data["Noblegarden"] = {
+	name = AL["Noblegarden"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	items = {
+		{ -- Noblegarden
+			name = AL["Brightly Colored Egg"],
+			[NORMAL_DIFF] = {
+				{ 1,  19028 }, -- Elegant Dress
+				{ 2,  6833 }, -- White Tuxedo Shirt
+				{ 3,  6835 }, -- Black Tuxedo Pants
+				{ 16,  7807 }, -- Candy Bar
+				{ 17,  7808 }, -- Chocolate Square
+				{ 18,  7806 }, -- Lollipop
+			},
+		},
+	},
+}
+
+data["ChildrensWeek"] = {
+	name = AL["Childrens Week"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{ -- ChildrensWeek
+			name = AL["Childrens Week"],
+			[NORMAL_DIFF] = {
+				{ 1,  23007 }, -- Piglet's Collar
+				{ 2,  23015 }, -- Rat Cage
+				{ 3,  23002 }, -- Turtle Box
+				{ 4,  23022 }, -- Curmudgeon's Payoff
+			},
+		},
+	},
+}
+
+data["MidsummerFestival"] = {
+	name = AL["Midsummer Festival"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{ -- MidsummerFestival
+			name = AL["Midsummer Festival"],
+			[NORMAL_DIFF] = {
+				{ 1,  23379 }, -- Cinder Bracers
+				{ 3,  23323 }, -- Crown of the Fire Festival
+				{ 4,  23324 }, -- Mantle of the Fire Festival
+				{ 6,  23083 }, -- Captured Flame
+				{ 7,  23247 }, -- Burning Blossom
+				{ 8,  23246 }, -- Fiery Festival Brew
+				{ 9,  23435 }, -- Elderberry Pie
+				{ 10, 23327 }, -- Fire-toasted Bun
+				{ 11, 23326 }, -- Midsummer Sausage
+				{ 12, 23211 }, -- Toasted Smorc
+			},
+		},
+	},
+}
+
+data["HarvestFestival"] = {
+	name = AL["Harvest Festival"],
+	ContentType = WORLD_EVENT_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	items = {
+		{ -- HarvestFestival
+			name = AL["Harvest Festival"],
+			[NORMAL_DIFF] = {
+				{ 1,  19697 }, -- Bounty of the Harvest
+				{ 2,  20009 }, -- For the Light!
+				{ 3,  20010 }, -- The Horde's Hellscream
+				{ 16,  19995 }, -- Harvest Boar
+				{ 17,  19996 }, -- Harvest Fish
+				{ 18,  19994 }, -- Harvest Fruit
+				{ 19,  19997 }, -- Harvest Nectar
 			},
 		},
 	},
@@ -1444,209 +1578,6 @@ data["WinterVeil"] = {
 				{ 16, 17303 }, -- Blue Ribboned Wrapping Paper
 				{ 17, 17304 }, -- Green Ribboned Wrapping Paper
 				{ 18, 17307 }, -- Purple Ribboned Wrapping Paper
-			},
-		},
-	},
-}
-
-data["Noblegarden"] = {
-	name = AL["Noblegarden"],
-	ContentType = WORLD_EVENT_CONTENT,
-	LoadDifficulty = NORMAL_DIFF,
-	TableType = NORMAL_ITTYPE,
-	items = {
-		{ -- Noblegarden
-			name = AL["Brightly Colored Egg"],
-			[NORMAL_DIFF] = {
-				{ 1,  19028 }, -- Elegant Dress
-				{ 2,  6833 }, -- White Tuxedo Shirt
-				{ 3,  6835 }, -- Black Tuxedo Pants
-				{ 16,  7807 }, -- Candy Bar
-				{ 17,  7808 }, -- Chocolate Square
-				{ 18,  7806 }, -- Lollipop
-			},
-		},
-	},
-}
-
-data["HarvestFestival"] = {
-	name = AL["Harvest Festival"],
-	ContentType = WORLD_EVENT_CONTENT,
-	LoadDifficulty = NORMAL_DIFF,
-	TableType = NORMAL_ITTYPE,
-	items = {
-		{ -- HarvestFestival
-			name = AL["Harvest Festival"],
-			[NORMAL_DIFF] = {
-				{ 1,  19697 }, -- Bounty of the Harvest
-				{ 2,  20009 }, -- For the Light!
-				{ 3,  20010 }, -- The Horde's Hellscream
-				{ 16,  19995 }, -- Harvest Boar
-				{ 17,  19996 }, -- Harvest Fish
-				{ 18,  19994 }, -- Harvest Fruit
-				{ 19,  19997 }, -- Harvest Nectar
-			},
-		},
-	},
-}
-
-data["LunarFestival"] = {
-	name = AL["Lunar Festival"],
-	ContentType = WORLD_EVENT_CONTENT,
-	LoadDifficulty = NORMAL_DIFF,
-	TableType = NORMAL_ITTYPE,
-	items = {
-		{ -- LunarFestival1
-			name = AL["Lunar Festival"],
-			[NORMAL_DIFF] = {
-				{ 1,  21100 }, -- Coin of Ancestry
-				{ 3,  21157 }, -- Festive Green Dress
-				{ 4,  21538 }, -- Festive Pink Dress
-				{ 5,  21539 }, -- Festive Purple Dress
-				{ 6,  21541 }, -- Festive Black Pant Suit
-				{ 7,  21544 }, -- Festive Blue Pant Suit
-				{ 8,  21543 }, -- Festive Teal Pant Suit
-			},
-		},
-		{
-			name = AL["Lunar Festival Fireworks Pack"],
-			[NORMAL_DIFF] = {
-				{ 1, 21558 }, -- Small Blue Rocket
-				{ 2, 21559 }, -- Small Green Rocket
-				{ 3, 21557 }, -- Small Red Rocket
-				{ 4, 21561 }, -- Small White Rocket
-				{ 5, 21562 }, -- Small Yellow Rocket
-				{ 7, 21537 }, -- Festival Dumplings
-				{ 8, 21713 }, -- Elune's Candle
-				{ 16, 21589 }, -- Large Blue Rocket
-				{ 17, 21590 }, -- Large Green Rocket
-				{ 18, 21592 }, -- Large Red Rocket
-				{ 19, 21593 }, -- Large White Rocket
-				{ 20, 21595 }, -- Large Yellow Rocket
-			}
-		},
-		{
-			name = AL["Lucky Red Envelope"],
-			[NORMAL_DIFF] = {
-				{ 1, 21540 }, -- Elune's Lantern
-				{ 2, 21536 }, -- Elune Stone
-				{ 16, 21744 }, -- Lucky Rocket Cluster
-				{ 17, 21745 }, -- Elder's Moonstone
-			}
-		},
-		{ -- LunarFestival2
-			name = AL["Plans"],
-			[NORMAL_DIFF] = {
-				{ 1,  21722 }, -- Pattern: Festival Dress
-				{ 3,  21738 }, -- Schematic: Firework Launcher
-				{ 5,  21724 }, -- Schematic: Small Blue Rocket
-				{ 6,  21725 }, -- Schematic: Small Green Rocket
-				{ 7,  21726 }, -- Schematic: Small Red Rocket
-				{ 9, 21727 }, -- Schematic: Large Blue Rocket
-				{ 10, 21728 }, -- Schematic: Large Green Rocket
-				{ 11, 21729 }, -- Schematic: Large Red Rocket
-				{ 16, 21723 }, -- Pattern: Festive Red Pant Suit
-				{ 18, 21737 }, -- Schematic: Cluster Launcher
-				{ 20, 21730 }, -- Schematic: Blue Rocket Cluster
-				{ 21, 21731 }, -- Schematic: Green Rocket Cluster
-				{ 22, 21732 }, -- Schematic: Red Rocket Cluster
-				{ 24, 21733 }, -- Schematic: Large Blue Rocket Cluster
-				{ 25, 21734 }, -- Schematic: Large Green Rocket Cluster
-				{ 26, 21735 }, -- Schematic: Large Red Rocket Cluster
-			},
-		},
-	},
-}
-
-data["MidsummerFestival"] = {
-	name = AL["Midsummer Festival"],
-	ContentType = WORLD_EVENT_CONTENT,
-	LoadDifficulty = NORMAL_DIFF,
-	TableType = NORMAL_ITTYPE,
-	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
-	items = {
-		{ -- MidsummerFestival
-			name = AL["Midsummer Festival"],
-			[NORMAL_DIFF] = {
-				{ 1,  23379 }, -- Cinder Bracers
-				{ 3,  23323 }, -- Crown of the Fire Festival
-				{ 4,  23324 }, -- Mantle of the Fire Festival
-				{ 6,  23083 }, -- Captured Flame
-				{ 7,  23247 }, -- Burning Blossom
-				{ 8,  23246 }, -- Fiery Festival Brew
-				{ 9,  23435 }, -- Elderberry Pie
-				{ 10, 23327 }, -- Fire-toasted Bun
-				{ 11, 23326 }, -- Midsummer Sausage
-				{ 12, 23211 }, -- Toasted Smorc
-			},
-		},
-	},
-}
-
-data["Brewfest"] = {
-	name = AL["Brewfest"],
-	ContentType = WORLD_EVENT_CONTENT,
-	LoadDifficulty = NORMAL_DIFF,
-	TableType = NORMAL_ITTYPE,
-	gameVersion = AtlasLoot.BC_VERSION_NUM,
-	items = {
-		{ -- Brewfest
-			name = AL["Brewfest"],
-			[NORMAL_DIFF] = {
-				{ 1,  33968 }, -- Blue Brewfest Hat
-				{ 2,  33864 }, -- Brown Brewfest Hat
-				{ 3,  33967 }, -- Green Brewfest Hat
-				{ 4,  33969 }, -- Purple Brewfest Hat
-				{ 5,  33863 }, -- Brewfest Dress
-				{ 6,  33862 }, -- Brewfest Regalia
-				{ 7,  33966 }, -- Brewfest Slippers
-				{ 8,  33868 }, -- Brewfest Boots
-				{ 10,  33047 }, -- Belbi's Eyesight Enhancing Romance Goggles (Alliance)
-				{ 11,  34008 }, -- Blix's Eyesight Enhancing Romance Goggles (Horde)
-				{ 13,  33016 }, -- Blue Brewfest Stein
-				{ 15,  37829 }, -- Brewfest Prize Token
-				{ 16,  33976 }, -- Brewfest Ram
-				{ 17,  33977 }, -- Swift Brewfest Ram
-				{ 19,  32233 }, -- Wolpertinger's Tankard
-				{ 21,  34028 }, -- "Honorary Brewer" Hand Stamp
-				{ 22,  37599 }, -- "Brew of the Month" Club Membership Form
-				{ 24,  33927 }, -- Brewfest Pony Keg
-				{ 26,  37750 }, -- Fresh Brewfest Hops
-				{ 27,  39477 }, -- Fresh Dwarven Brewfest Hops
-				{ 28,  39476 }, -- Fresh Goblin Brewfest Hops
-				{ 29,  37816 }, -- Preserved Brewfest Hops
-			},
-		},
-		{
-			name = AL["Food"],
-			[NORMAL_DIFF] = {
-				{ 1,  33043 }, -- The Essential Brewfest Pretzel
-				{ 3,  34017 }, -- Small Step Brew
-				{ 4,  34018 }, -- long Stride Brew
-				{ 5,  34019 }, -- Path of Brew
-				{ 6,  34020 }, -- Jungle River Water
-				{ 7,  34021 }, -- Brewdoo Magic
-				{ 8,  34022 }, -- Stout Shrunken Head
-				{ 9,  33034 }, -- Gordok Grog
-				{ 10,  33035 }, -- Ogre Mead
-				{ 11,  33036 }, -- Mudder's Milk
-
-			},
-		},
-		{
-			name = C_Map_GetAreaInfo(1584).." - "..AL["Coren Direbrew"],
-			[NORMAL_DIFF] = {
-				{ 1,  37128 }, -- Balebrew Charm
-				{ 2,  37127 }, -- Brightbrew Charm
-				{ 3,  38287 }, -- Empty Mug of Direbrew
-				{ 4,  38290 }, -- Dark Iron Smoking Pipe
-				{ 5,  38288 }, -- Direbrew Hops
-				{ 6,  38289 }, -- Coren's Lucky Coin
-				{ 8,  37597 }, -- Direbrew's Shanker
-				{ 16,  33977 }, -- Swift Brewfest Ram
-				{ 17,  37828 }, -- Great Brewfest Kodo
-				{ 19,  37863 }, -- Direbrew's Remote
-				{ 21,  38280 }, -- Direbrew's Dire Brew
 			},
 		},
 	},
@@ -1883,6 +1814,266 @@ data["ScourgeInvasion"] = {
 				{ 1, 23178 }, -- Mantle of Lady Falther'ess
 				{ 2, 23177 }, -- Lady Falther'ess' Finger
 			}
+		},
+	},
+}
+data["Sod Exclusives"] = {
+	name = AL["Waylaid Supplies"],
+	ContentType = SOD_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{
+			name = AL["Level 25: Phase 1"],
+			[NORMAL_DIFF] = {
+				{ 1, 211322 }, -- Waylaid Supplies: Minor Wizard Oil
+				{ 2, 211321 }, -- Waylaid Supplies: Lesser Magic Wands
+				{ 3, 211318 }, -- Waylaid Supplies: Minor Healing Potions
+				{ 4, 211320 }, -- Waylaid Supplies: Runed Copper Pants
+				{ 5, 211323 }, -- Waylaid Supplies: Rough Copper Bombs
+				{ 6, 211329 }, -- Waylaid Supplies: Herb Baked Eggs
+				{ 7, 211326 }, -- Waylaid Supplies: Embossed Leather Vests
+				{ 8, 211332 }, -- Waylaid Supplies: Heavy Linen Bandages
+				{ 9, 211319 }, -- Waylaid Supplies: Copper Shortswords
+				{ 10, 211330 }, -- Waylaid Supplies: Spiced Wolf Meat
+				{ 11, 211324 }, -- Waylaid Supplies: Rough Boomsticks
+				{ 12, 211327 }, -- Waylaid Supplies: Brown Linen Pants
+				{ 13, 211317 }, -- Waylaid Supplies: Silverleaf
+				{ 14, 211325 }, -- Waylaid Supplies: Handstitched Leather Belts
+				{ 15, 211328 }, -- Waylaid Supplies: Brown Linen Robes
+				{ 16, 211934 }, -- Waylaid Supplies: Healing Potions
+				{ 17, 211315 }, -- Waylaid Supplies: Light Leather
+				{ 18, 211331 }, -- Waylaid Supplies: Brilliant Smallfish
+				{ 19, 210771 }, -- Waylaid Supplies: Copper Bars
+				{ 20, 211933 }, -- Waylaid Supplies: Rough Stone
+				{ 21, 211316 }, -- Waylaid Supplies: Peacebloom
+				{ 22, 211828 }, -- Waylaid Supplies: Minor Mana Oil
+				{ 23, 211824 }, -- Waylaid Supplies: Lesser Mana Potions
+				{ 24, 211835 }, -- Waylaid Supplies: Smoked Sagefish
+				{ 25, 211829 }, -- Waylaid Supplies: Small Bronze Bombs
+				{ 26, 211822 }, -- Waylaid Supplies: Bruiseweed
+				{ 27, 211838 }, -- Waylaid Supplies: Heavy Wool Bandages
+				{ 28, 211825 }, -- Waylaid Supplies: Rough Bronze Boots
+				{ 29, 211836 }, -- Waylaid Supplies: Smoked Bear Meat
+				{ 30, "INV_Box_01", nil, AL["Continued on next page ->"], nil },
+				{ 101, 211831 }, -- Waylaid Supplies: Dark Leather Cloaks
+				{ 102, 211837 }, -- Waylaid Supplies: Goblin Deviled Clams
+				{ 103, 211820 }, -- Waylaid Supplies: Silver Bars
+				{ 104, 211821 }, -- Waylaid Supplies: Medium Leather
+				{ 105, 211833 }, -- Waylaid Supplies: Gray Woolen Shirts
+				{ 106, 211827 }, -- Waylaid Supplies: Runed Silver Rods
+				{ 107, 211819 }, -- Waylaid Supplies: Bronze Bars
+				{ 108, 211830 }, -- Waylaid Supplies: Ornate Spyglasses
+				{ 109, 211826 }, -- Waylaid Supplies: Silver Skeleton Keys
+				{ 110, 211935 }, -- Waylaid Supplies: Elixir of Firepower
+				{ 111, 211834 }, -- Waylaid Supplies: Pearl-clasped Cloaks
+				{ 112, 211823 }, -- Waylaid Supplies: Swiftthistle
+				{ 113, 211832 }, -- Waylaid Supplies: Hillman's Shoulders
+			},
+		},
+		{
+			name = AL["Level 40: Phase 2"],
+			[NORMAL_DIFF] = {
+				{ 1, 215403 }, -- Waylaid Supplies: Deadly Scopes
+				{ 2, 215400 },
+				{ 3, 215402 },
+				{ 4, 215389 },
+				{ 5, 215391 },
+				{ 6, 215411 }, -- Waylaid Supplies: Frost Leather Cloaks
+				{ 7, 215398 },
+				{ 8, 215387 },
+				{ 9, 215420 },
+				{ 10, 215421 },
+				{ 11, 215413 },
+				{ 12, 215408 }, -- Waylaid Supplies: Frost Leather Cloaks
+				{ 13, 215392 },
+				{ 14, 215386 },
+				{ 15, 215390 },
+				{ 16, 215399 },
+				{ 17, 215395 }, -- Waylaid Supplies: Elixirs of Agility
+				{ 18, 215388 },
+				{ 19, 215393 },
+				{ 20, 215401 }, -- Waylaid Supplies: Compact Harvest Reaper Kits
+				{ 21, 215419 },
+				{ 22, 215414 },
+				{ 23, 215385 },
+				{ 24, 215417 },
+				{ 25, 215415 },
+				{ 26, 215407 },
+				{ 27, 215418 }, -- Waylaid Supplies: Spider Sausages
+				{ 28, 215404 },
+				{ 29, 215396 },
+				{ 30, "INV_Box_01", nil, AL["Continued on next page ->"], nil },
+				{ 101, 215397 },
+				{ 102, 215409 },
+				{ 103, 215416 }, -- Waylaid Supplies: White Bandit Masks
+			},
+		},
+				{
+			name = AL["Level 50: Phase 3"],
+			[NORMAL_DIFF] = {
+				{ 1, 220927 }, -- Waylaid Supplies: Thick Hide
+				{ 2, 220926 }, --Waylaid Supplies: Rugged Leather
+				{ 3, 220925 }, --Waylaid Supplies: Thorium Bars
+				{ 4, 220924 }, --Waylaid Supplies: Truesilver Bars
+				{ 5, 220923 }, --Waylaid Supplies: Dreamfoil
+				{ 6, 220922 }, --Waylaid Supplies: Sungrass
+				{ 7, 220921 }, --Waylaid Supplies: Heavy Mageweave Bandages
+				{ 8, 220920 }, --Waylaid Supplies: Tender Wolf Steaks
+				{ 9, 220919 }, --Waylaid Supplies: Nightfin Soup
+				{ 10, 220918 }, --Waylaid Supplies: Undermine Clam Chowder
+				{ 11, 220942 }, --Waylaid Supplies: Tuxedo Shirts
+				{ 12, 220941 }, --Waylaid Supplies: Runecloth Belts
+				{ 13, 220940 }, --Waylaid Supplies: Black Mageweave Headbands
+				{ 14, 220939 }, --Waylaid Supplies: Runic Leather Bracers
+				{ 15, 220938 }, --Waylaid Supplies: Wicked Leather Bracers
+				{ 16, 220937 }, --Waylaid Supplies: Rugged Armor Kits
+				{ 17, 220936 }, --Waylaid Supplies: Truesilver Gauntlets
+				{ 18, 220935 }, --Waylaid Supplies: Thorium Belts
+				{ 19, 220934 }, --Waylaid Supplies: Mithril Coifs
+				{ 20, 220933 }, --Waylaid Supplies: Thorium Rifles
+				{ 21, 220932 }, --Waylaid Supplies: Thorium Grenades
+				{ 22, 220931 }, --Waylaid Supplies: Hi-Explosive Bombs
+				{ 23, 220930 }, --Waylaid Supplies: Major Healing Potions
+				{ 24, 220929 }, -- Waylaid Supplies: Superior Mana Potions
+				{ 25, 220928 }, -- Waylaid Supplies: Enchanted Thorium Bars
+			},
+		},
+	},
+}
+
+data["SoD Set Items"] = {
+	name = AL["Set Items"],
+	ContentType = SOD_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = SET_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{
+			name = AL["Level 25 Raid"],
+			[NORMAL_DIFF] = {
+				{ 1, 1570 }, -- Twilight Invoker's Vestments
+				{ 3, 1578 }, -- 
+				{ 4, 1579 }, -- 
+				{ 6, 1577 }, -- 
+			},
+		},
+		{
+			name = AL["Level 40 Raid"],
+			[NORMAL_DIFF] = {
+				{ 1, 1584 },
+				{ 2, 1587 },
+				{ 3, 1588 },
+				{ 5, 1585 },
+				{ 6, 1586 },
+				{ 8, 1590 },
+				{ 9, 1591 },
+				{ 11, 1589 },
+				{ 12, 1592 },
+			},
+		},
+		{
+			name = AL["Level 50 Raid"],
+			[NORMAL_DIFF] = {
+				{ 1, 1637 }, 
+				{ 2, 1638 }, 
+				{ 3, 1639 }, 
+				{ 5, 1640 }, 
+				{ 6, 1641 }, 
+				{ 7, 1642 }, 
+				{ 8, 1643 }, 
+				{ 10, 1644 }, 
+				{ 11, 1645 }, 
+				{ 12, 1646 }, 
+				{ 13, 1647 }, 
+				{ 16, 1648 }, 
+				{ 17, 1649 },
+				{ 18, 1650 },
+			},
+		},
+		{
+			name = AL["Level 50 Emerald Sets"],
+			[NORMAL_DIFF] = {
+				{ 1, 1652 },
+				{ 2, 1653 },
+				{ 4, 1654 },
+				{ 5, 1655 },
+				{ 6, 1656 },
+				{ 8, 1657 },
+				{ 9, 1658 },
+				{ 10, 1659 },
+				{ 12, 1660 },
+				{ 13, 1661 },
+			},
+		},
+		{
+			name = AL["Level 50 PvP Sets"],
+			[NORMAL_DIFF] = {
+				{ 1, "INV_Box_01", nil, AL["Horde"], nil },
+				{ 2, 1618 }, --Blood Guard's Plate
+				{ 4, 1624 },
+				{ 5, 1623 },
+				{ 6, 1622 },
+				{ 7, 1625 },
+				{ 9, 1627 },
+				{ 10, 1631 },
+				{ 11, 1629 },
+				{ 13, 1633 },
+				{ 14, 1635 },
+				{ 16, "INV_Box_01", nil, AL["Alliance"], nil },
+				{ 17, 1619 },
+				{ 18, 1620 },
+				{ 19, 1621 },
+				{ 21, 1665 },
+				{ 22, 1626 },
+				{ 24, 1628 },
+				{ 25, 1630 },
+				{ 26, 1632 },
+				{ 28, 1634 },
+				{ 29, 1636 },
+			},
+		},
+	},
+}
+
+data["DarkMoon Cards"] = {
+	name = AL["Darkmoon Cards"],
+	ContentType = SOD_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{
+			name = AL["Level 50 Cards"],
+			[NORMAL_DIFF] = {
+				{ 1, 221272 }, -- Wilds Deck
+				{ 2, 221280 }, -- Plagues Deck
+				{ 3, 221289 }, -- Dunes Deck
+				{ 4, 221299 }, -- Nightmares Deck
+			},
+		},
+	},
+}
+
+data["Wild Offerings"] = {
+	name = AL["Wild Offerings"],
+	ContentType = SOD_CONTENT,
+	LoadDifficulty = NORMAL_DIFF,
+	TableType = NORMAL_ITTYPE,
+	gameVersion = AtlasLoot.CLASSIC_VERSION_NUM,
+	items = {
+		{
+			name = AL["Wild Offering Rewards"],
+			[NORMAL_DIFF] = {
+				{ 1, 223194 }, -- Band of the Wilds
+				{ 2, 223195 }, -- Breadth of the Beast
+				{ 3, 223197 }, -- Defender of the Wilds
+				{ 4, 223192 }, -- Cord of the Untamed
+				{ 5, 223193 }, -- Crown of the Dreamweaver
+				{ 6, 223196 }, -- Godslayer's Greaves
+				{ 7, 221491 }, -- Shadowtooth Bag
+			},
 		},
 	},
 }

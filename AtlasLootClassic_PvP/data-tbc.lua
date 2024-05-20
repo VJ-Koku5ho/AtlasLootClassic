@@ -82,7 +82,7 @@ local PVP_INSIGNIA = {	-- Insignias
 }
 
 local PVP_GEMS = {	-- Gems
-	name = AL["Gems"],
+	name = ALIL["Gems"],
 	NORMAL_ITTYPE = ICON_ITTYPE,
 	ExtraList = true,
 	[NORMAL_DIFF] = {
@@ -103,7 +103,7 @@ data["HonorSetBCC"] = {
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = AL["Sets"],
+			name = ALIL["Sets"],
 			TableType = SET_ITTYPE,
 			[ALLIANCE_DIFF] = {
 				{ 1,    591 }, -- Warlock
@@ -250,7 +250,7 @@ data["ReputationSetBCC"] = {
 	LoadDifficulty = LOAD_DIFF,
 	items = {
 		{
-			name = AL["Sets"],
+			name = ALIL["Sets"],
 			TableType = SET_ITTYPE,
 			[NORMAL_DIFF] = {
 				{ 1,    738 }, -- Warlock
@@ -1116,7 +1116,7 @@ data["ArenaS4PvP"] = {
 			},
 		},
 		AtlasLoot:GameVersion_GE(AtlasLoot.WRATH_VERSION_NUM, {
-			name = AL["Back"],
+			name = ALIL["Cloak"],
 			[NORMAL_DIFF] = {
 				{ 1, 44431 }, -- Cloak of Certain Reprieve
 				{ 2, 41591 }, --  Sergeant's Reinforced Cape

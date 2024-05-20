@@ -18,7 +18,7 @@ local LOC_DATA = {
 	[1] = {
 		["__name"] = "Container",
 		[0] = "Bag",
-		[1] = "Soul Bag",
+		[1] = "Soul Bag(OBSOLETE)",
 		[2] = "Herb Bag",
 		[3] = "Enchanting Bag",
 		[4] = "Engineering Bag",
@@ -258,11 +258,9 @@ local ITEM_DESC_INFO = {
 		["Fishing"] = true, -- 9
 	},
 	--]]
-	
 	["Money(OBSOLETE)"] = {		-- 10
-	["Money(OBSOLETE)"] = IngameLocales["Currency"], -- 0
+		["Money(OBSOLETE)"] = IngameLocales["Currency"], -- 0
 	},
-	
 	--[[
 	["Quiver"] = {		-- 11
 		["Quiver(OBSOLETE)"] = true, -- 0

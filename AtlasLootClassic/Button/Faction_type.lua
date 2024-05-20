@@ -113,6 +113,11 @@ local FACTION_KEY = {
 	[609] = "Cenarion Circle",
 	[749] = "Hydraxian Waterlords",
 	[910] = "Brood of Nozdormu",
+	-- SoD
+	[889] = "Warsong Outriders",
+	[890] = "Silverwing Sentinels",
+	[2586] = AL["Azeroth Commerce Authority"],
+	[2587] = "Durotar Supply and Logistics",
 	-- BC
 	[922] = AL["Tranquillien"], -- Horde only
 	[941] = AL["The Mag'har"], -- Horde only
@@ -124,6 +129,11 @@ local FACTION_KEY = {
 	[1052] = AL["Horde Expedition"], -- Horde only
 	[1094] = AL["The Silver Covenant"], -- Alli only
 	[1124] = AL["The Sunreavers"], -- Horde only
+	-- Cata
+	[1177] = AL["Baradin's Warders"], -- Alli only
+	[1174] = AL["Wildhammer Clan"], -- Alli only
+	[1178] = AL["Hellscream's Reach"], -- Horde only
+	[1172] = AL["Dragonmaw Clan"], -- Horde only
 }
 
 ClickHandler:Add(
@@ -303,7 +313,7 @@ function Faction.ShowToolTipFrame(button)
 							insets = { left = 4, right = 4, top = 4, bottom = 4 }})
 		frame:SetBackdropColor(0,0,0,1)
 
-		frame.icon = frame:CreateTexture(name.."-icon", frame)
+		frame.icon = frame:CreateTexture(name.."-icon", "ARTWORK")
 		frame.icon:SetPoint("TOPLEFT", frame, "TOPLEFT", 5, -5)
 		frame.icon:SetHeight(15)
 		frame.icon:SetWidth(15)
@@ -339,7 +349,7 @@ function Faction.ShowToolTipFrame(button)
 		frame.standing.text:SetPoint("TOPLEFT", 3, -3)
 		frame.standing.text:SetPoint("BOTTOMRIGHT", -4, 3)
 		frame.standing.text:SetJustifyH("CENTER")
-		frame.standing.text:SetJustifyV("CENTER")
+		frame.standing.text:SetJustifyV("MIDDLE")
 		frame.standing.text:SetTextColor(1, 1, 1, 1)
 
 		frame.desc = frame:CreateFontString(name.."-desc", "ARTWORK", "GameFontNormalSmall")

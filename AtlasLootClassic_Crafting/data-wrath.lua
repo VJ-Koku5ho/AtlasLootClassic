@@ -26,8 +26,8 @@ local NORMAL_DIFF = data:AddDifficulty(AL["Normal"], "n", 1, nil, true)
 local LEATHER_DIFF = data:AddDifficulty(ALIL["Leather"], "leather", 0)
 local MAIL_DIFF = data:AddDifficulty(ALIL["Mail"], "mail", 0)
 local PLATE_DIFF = data:AddDifficulty(ALIL["Plate"], "plate", 0)
-local MAJOR_GLYPHS_DIFF = data:AddDifficulty(ALIL["Major Glyphs"], "majorglyphs", 0)
-local MINOR_GLYPHS_DIFF = data:AddDifficulty(ALIL["Minor Glyphs"], "minorglyphs", 0)
+--local MAJOR_GLYPHS_DIFF = data:AddDifficulty(ALIL["Major Glyphs"], "majorglyphs", 0)
+--local MINOR_GLYPHS_DIFF = data:AddDifficulty(ALIL["Minor Glyphs"], "minorglyphs", 0)
 
 local NORMAL_ITTYPE = data:AddItemTableType("Item", "Item")
 local PROF_ITTYPE = data:AddItemTableType("Profession", "Item")
@@ -58,7 +58,8 @@ data["AlchemyWrath"] = {
 				{ 2, 54213 },	-- Flask of Pure Mojo
 				{ 3, 53902 },	-- Flask of Stoneblood
 				{ 4, 53901 },	-- Flask of the Frost Wyrm
-				{ 5, 53899 },	-- Lesser Flask of Toughness
+				{ 5, 62213 },	-- Lesser Flask of Resistance
+				{ 6, 53899 },	-- Lesser Flask of Toughness
 			},
 		},
 		{
@@ -258,14 +259,15 @@ data["BlacksmithingWrath"] = {
 			[PLATE_DIFF] = {
 				{ 1, [ATLASLOOT_IT_ALLIANCE] = { 67091 }, [ATLASLOOT_IT_HORDE] = { 67130 } },	-- Breastplate of the White Knight
 				{ 2, [ATLASLOOT_IT_ALLIANCE] = { 67095 }, [ATLASLOOT_IT_HORDE] = { 67134 } },	-- Sunforged Breastplate
-				{ 3, [ATLASLOOT_IT_ALLIANCE] = { 67094 }, [ATLASLOOT_IT_HORDE] = { 67133 } },	-- Titanium Spikeguards
-				{ 4, 55311 },	-- Savage Saronite Hauberk
-				{ 5, 55058 },	-- Brilliant Saronite Breastplate
-				{ 6, 55186 },	-- Chestplate of Conquest
-				{ 7, 54553 },	-- Tempered Saronite Breastplate
-				{ 8, 54944 },	-- Spiked Cobalt Chestpiece
-				{ 9, 54981 },	-- Reinforced Cobalt Chestpiece
-				{ 10, 52570 },	-- Cobalt Chestpiece
+				{ 3, [ATLASLOOT_IT_ALLIANCE] = { 67093 }, [ATLASLOOT_IT_HORDE] = { 67132} },	-- Titanium Razorplate
+				{ 4, 61008 },	-- Icebane Chestguard
+				{ 5, 55311 },	-- Savage Saronite Hauberk
+				{ 6, 55058 },	-- Brilliant Saronite Breastplate
+				{ 7, 55186 },	-- Chestplate of Conquest
+				{ 8, 54553 },	-- Tempered Saronite Breastplate
+				{ 9, 54944 },	-- Spiked Cobalt Chestpiece
+				{ 10, 54981 },	-- Reinforced Cobalt Chestpiece
+				{ 11, 52570 },	-- Cobalt Chestpiece
 			},
 		},
 		{ -- Feet
@@ -420,9 +422,14 @@ data["EnchantingWrath"] = {
 				{ 8, 44582 },	-- Enchant Cloak - Minor Power
 				{ 9, 60609 },	-- Enchant Cloak - Speed
 
-				{ 16, 60609 },	-- Enchant Cloak - Speed
-				{ 17, 44582 },	-- Enchant Cloak - Spell Piercing
-				{ 18, 60663 },	-- Enchant Cloak - Major Agility
+				{ 20, 44596 },	-- Enchant Cloak - Superior Arcane Resistance
+				{ 19, 44556 },	-- Enchant Cloak - Superior Fire Resistance
+				{ 16, 44483 },	-- Enchant Cloak - Superior Frost Resistance
+				{ 17, 44494 },	-- Enchant Cloak - Superior Nature Resistance
+				{ 18, 44590 },	-- Enchant Cloak - Superior Shadow Resistance
+
+
+
 			}
 		},
 		{
@@ -742,6 +749,15 @@ data["TailoringWrath"] = {
 			}
 		},
 		{
+            name = AL["Shirts"],
+            [NORMAL_DIFF] = {
+                { 1, 55993 },    -- Red Lumberjack Shirt
+                { 2, 55994 },    -- Blue Lumberjack Shirt
+                { 3, 55995 },    -- Yellow Lumberjack Shirt
+                { 4, 55996 },    -- Green Lumberjack Shirt
+            }
+        },
+		{
 			name = ALIL["Bag"],
 			[NORMAL_DIFF] = {
 				{ 1, 56005 },	-- Glacial Bag
@@ -756,11 +772,13 @@ data["TailoringWrath"] = {
 			[NORMAL_DIFF] = {
 				{ 1, 56034 },	-- Master's Spellthread
 				{ 2, 56010 },	-- Azure Spellthread
-				{ 4, 55777 },	-- Schwertwallgarn
-				{ 5, 55642 },	-- Hell leuchtendes Garn
-				{ 6, 55769 },	-- Dunkel glühendes Garn
+				{ 3, 56011 },   -- Sapphire Spellthread
+				{ 5, 55777 },	-- Schwertwallgarn
+				{ 6, 55642 },	-- Hell leuchtendes Garn
+				{ 7, 55769 },	-- Dunkel glühendes Garn
 				{ 16, 56039 },	-- Sanctified Spellthread
 				{ 17, 56008 },	-- Shining Spellthread
+				{ 18, 56009 },  -- Brilliant Spellthread
 			}
 		},
 		{
@@ -800,8 +818,9 @@ data["LeatherworkingWrath"] = {
 			name = AL["Armor"].." - "..ALIL["Cloak"],
 			[NORMAL_DIFF] = {
 				{ 1, 60637 },	-- Ice Striker's Cloak
-				{ 2, 55199 },	-- Cloak of Tormented Skies
-				{ 3, 60631 },	-- Cloak of Harsh Winds
+				{ 2, 60640 },	-- Durable Nerubhide Cape
+				{ 3, 55199 },	-- Cloak of Tormented Skies
+				{ 4, 60631 },	-- Cloak of Harsh Winds
 			}
 		},
 		{ -- Chest
@@ -996,11 +1015,19 @@ data["LeatherworkingWrath"] = {
 				{ 6, 50966 },	-- Nerubian Leg Armor
 				{ 8, 50963 },	-- Heavy Borean Armor Kit
 
-				{ 10, 57683 },	-- Fur Lining - Attack Power
-				{ 11, 57691 },	-- Fur Lining - Spell Power
+				{ 10, 60584 },	-- Nerubian Leg Reinforcements
+				{ 11, 60583 },	-- Jormungar Leg Reinforcements
 
-				{ 25, 60584 },	-- Nerubian Leg Reinforcements
-				{ 26, 60583 },	-- Jormungar Leg Reinforcements
+				{ 16, 57691 },	-- Fur Lining - Spell Power
+				{ 17, 57690 },	-- Fur Lining - Stamina
+				{ 18, 57683 },	-- Fur Lining - Attack Power
+
+				{ 20, 57701 },	-- Fur Lining - Arcane Resist
+				{ 21, 57692 },	-- Fur Lining - Fire Resist
+				{ 22, 57694 },	-- Fur Lining - Frost Resist
+				{ 23, 57699 },	-- Fur Lining - Nature Resist
+				{ 24, 57696 },	-- Fur Lining - Shadow Resist
+
 			},
 		},
 		{
@@ -1016,6 +1043,8 @@ data["LeatherworkingWrath"] = {
 				{ 1, 50971 },	-- Mammoth Mining Bag
 				{ 2, 60643 },	-- Pack of Endless Pockets
 				{ 3, 50970 },	-- Trapper's Traveling Pack
+				{ 5, 60647 },	-- Nerubian Reinforced Quiver
+				{ 6, 60645 },	-- Dragonscale Ammo Pouch
 			},
 		},
 		{
@@ -1078,14 +1107,12 @@ data["JewelcraftingWrath"] = {
 				{ 1, 56500 },	-- Titanium Earthguard Chain
 				{ 2, 56499 },	-- Titanium Impact Choker
 				{ 3, 56501 },	-- Titanium Spellshock Necklace
-				{ 4, 73496 },	-- Alicite Pendant
 				{ 5, 64725 },	-- Emerald Choker
 				{ 6, 64726 },	-- Sky Sapphire Amulet
 				{ 7, 56196 },	-- Blood Sun Necklace
 				{ 8, 56195 },	-- Jade Dagger Pendant
-				{ 9, 63743 },   -- Amulet of Truesight
-				{ 11, 58141 },  -- Crystal Citrine Necklace
-				{ 12, 58142 },  -- Crystal Chalcedony Amulet
+				{ 10, 58142 },	-- Crystal Chalcedony Amulet
+				{ 11, 58141 },	-- Crystal Citrine Necklace
 			}
 		},
 		{
@@ -1137,12 +1164,12 @@ data["JewelcraftingWrath"] = {
 				{ 10, 55403 },	-- Trenchant Earthsiege Diamond
 				{ 16, 55389 },	-- Chaotic Skyflare Diamond
 				{ 17, 55390 },	-- Destructive Skyflare Diamond
-				{ 18, 55392 },	-- Ember Skyflare Diamond
-				{ 19, 55393 },	-- Enigmatic Skyflare Diamond
-				{ 20, 55387 },	-- Forlorn Skyflare Diamond
-				{ 21, 55388 },	-- Impassive Skyflare Diamond
-				{ 22, 55407 },	-- Revitalizing Skyflare Diamond
-				{ 23, 55384 },	-- Shielded Skyflare Diamond
+				{ 18, 55384 },  -- Effulgent Skyflare Diamond
+				{ 19, 55392 },	-- Ember Skyflare Diamond
+				{ 20, 55393 },	-- Enigmatic Skyflare Diamond
+				{ 21, 55387 },	-- Forlorn Skyflare Diamond
+				{ 22, 55388 },	-- Impassive Skyflare Diamond
+				{ 23, 55407 },	-- Revitalizing Skyflare Diamond
 				{ 24, 55394 },	-- Swift Skyflare Diamond
 				{ 25, 55395 },	-- Thundering Skyflare Diamond
 				{ 26, 55386 },	-- Tireless Skyflare Diamond
@@ -1159,6 +1186,7 @@ data["JewelcraftingWrath"] = {
 				{ 6, 66449 },	-- Bright Cardinal Ruby
 				{ 7, 66451 },   -- Fractured Cardinal Ruby
 				{ 8, 66452 },   -- Subtle Cardinal Ruby
+				-- blue
 				{ 16, 53830 },	-- Bold Scarlet Ruby
 				{ 17, 53946 },	-- Runed Scarlet Ruby
 				{ 18, 53945 },	-- Delicate Scarlet Ruby
@@ -1167,6 +1195,7 @@ data["JewelcraftingWrath"] = {
 				{ 21, 53947 },	-- Bright Scarlet Ruby
 				{ 22, 53950 },  -- Fractured Scarlet Ruby
 				{ 23, 53948 },  -- Subtle Scarlet Ruby
+				-- green
 				{ 101, 53831 },	-- Bold Bloodstone
 				{ 102, 53834 },	-- Runed Bloodstone
 				{ 103, 53832 },	-- Delicate Bloodstone
@@ -1175,6 +1204,15 @@ data["JewelcraftingWrath"] = {
 				{ 106, 53835 },	-- Bright Bloodstone
 				{ 107, 53845 }, -- Fractured Bloodstone
 				{ 108, 53843 }, -- Subtle Bloodstone
+				-- perfect
+				{ 116, "i41432" }, -- Perfect Bold Bloodstone
+				{ 117, "i41438" }, -- Perfect Runed Bloodstone
+				{ 118, "i41434" }, -- Perfect Delicate Bloodstone
+				{ 119, "i41435" }, -- Perfect Flashing Bloodstone
+				{ 120, "i41437" }, -- Perfect Precise Bloodstone
+				{ 121, "i41433" }, -- Perfect Bright Bloodstone
+				{ 122, "i41436" }, -- Perfect Fractured Bloodstone
+				{ 123, "i41439" }, -- Perfect Subtle Bloodstone
 			}
 		},
 		{
@@ -1198,6 +1236,13 @@ data["JewelcraftingWrath"] = {
 				{ 19, 53854 },	-- Rigid Sun Crystal
 				{ 20, 53853 },	-- Smooth Sun Crystal
 				{ 21, 53855 },	-- Thick Sun Crystal
+				-- perfect
+				{ 23, "i41444" },	-- Perfect Brilliant Sun Crystal
+				{ 24, "i41445" },	-- Perfect Mystic Sun Crystal
+				{ 25, "i41446" },	-- Perfect Quick Sun Crystal
+				{ 26, "i41447" },	-- Perfect Rigid Sun Crystal
+				{ 27, "i41448" },	-- Perfect Smooth Sun Crystal
+				{ 28, "i41449" },	-- Perfect Thick Sun Crystal
 			}
 		},
 		{
@@ -1205,7 +1250,7 @@ data["JewelcraftingWrath"] = {
 			[NORMAL_DIFF] = {
 				{ 1, 66498 },	-- Sparkling Majestic Zircon
 				{ 2, 66497 },	-- Solid Majestic Zircon
-				{ 3, 66498 },	-- Lustrous Majestic Zircon
+				{ 3, 66500 },	-- Lustrous Majestic Zircon
 				{ 4, 66499 },	-- Stormy Majestic Zircon
 				{ 6, 53953 },	-- Sparkling Sky Sapphire
 				{ 7, 53952 },	-- Solid Sky Sapphire
@@ -1215,10 +1260,15 @@ data["JewelcraftingWrath"] = {
 				{ 17, 53934 },	-- Solid Chalcedony
 				{ 18, 53941 },	-- Lustrous Chalcedony
 				{ 19, 53943 },	-- Stormy Chalcedony
+				-- perfect
+				{ 21, "i41442" },	-- Perfect Sparkling Chalcedony
+				{ 22, "i41441" },	-- Perfect Solid Chalcedony
+				{ 23, "i41440" },	-- Perfect Lustrous Chalcedony
+				{ 24, "i41443" },	-- Perfect Stormy Chalcedony
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Orange"]),
+			name = format(GEM_FORMAT1, ALIL["Orange"]),
 			[NORMAL_DIFF] = {
 				{ 1, 66576 },   -- Accurate Ametrine
 				{ 2, 66579 },	-- Champion's Ametrine
@@ -1242,10 +1292,11 @@ data["JewelcraftingWrath"] = {
 				{ 20, 66587 },  -- Stark Ametrine
 				{ 21, 66570 },  -- Veiled Ametrine
 				{ 22, 66577 },	-- Wicked Ametrine
+				-- blue
 				{ 101, 53994 }, -- Accurate Monarch Topaz
 				{ 102, 53977 },	-- Champion's Monarch Topaz
 				{ 103, 53979 },	-- Deadly Monarch Topaz
-				{ 104, 53982 },	-- Deft Monarch Topaz
+				{ 104, 53991 },	-- Deft Monarch Topaz
 				{ 105, 53986 },	-- Durable Monarch Topaz
 				{ 106, 53990 },	-- Empowered Monarch Topaz
 				{ 107, 53976 }, -- Etched Monarch Topaz
@@ -1260,10 +1311,11 @@ data["JewelcraftingWrath"] = {
 				{ 116, 53987 },	-- Reckless Monarch Topaz
 				{ 117, 54023 },	-- Resolute Monarch Topaz
 				{ 118, 53978 },	-- Resplendent Monarch Topaz
-				{ 119, 53992 },	-- Stalwart Monarch Topaz
+				{ 119, 53993 },	-- Stalwart Monarch Topaz
 				{ 120, 53991 }, -- Stark Monarch Topaz
 				{ 121, 53985 }, -- Veiled Monarch Topaz
 				{ 122, 53988 }, -- Wicked Monarch Topaz
+				-- green
 				{ 201, 53892 }, -- Accurate Huge Citrine
 				{ 202, 53874 },	-- Champion's Huge Citrine
 				{ 203, 53877 },	-- Deadly Huge Citrine
@@ -1282,76 +1334,121 @@ data["JewelcraftingWrath"] = {
 				{ 216, 53885 },	-- Reckless Huge Citrine
 				{ 217, 53893 },	-- Resolute Huge Citrine
 				{ 218, 53875 },	-- Resplendent Huge Citrine
-				{ 219, 53890 },	-- Stalwart Huge Citrine
+				{ 219, 53891 },	-- Stalwart Huge Citrine
 				{ 220, 53889 }, -- Stark Huge Citrine
 				{ 221, 53883 },	-- Veiled Huge Citrine
 				{ 222, 53886 }, -- Wicked Huge Citrine
+				-- perfect
+				{ 301, "i41482" }, -- Perfect Accurate Huge Citrine
+				{ 302, "i41483" }, -- Perfect Champion's Huge Citrine
+				{ 303, "i41484" }, -- Perfect Deadly Huge Citrine
+				{ 304, "i41485" }, -- Perfect Deft Huge Citrine
+				{ 305, "i41486" }, -- Perfect Durable Huge Citrine
+				{ 306, "i41487" }, -- Perfect Empowered Huge Citrine
+				{ 307, "i41488" }, -- Perfect Etched Huge Citrine
+				{ 308, "i41489" }, -- Perfect Fierce Huge Citrine
+				{ 309, "i41490" }, -- Perfect Glimmering Huge Citrine
+				{ 310, "i41491" }, -- Perfect Glinting Huge Citrine
+				{ 311, "i41492" }, -- Perfect Inscribed Huge Citrine
+				{ 312, "i41493" }, -- Perfect Lucent Huge Citrine
+				{ 313, "i41494" }, -- Perfect Luminous Huge Citrine
+				{ 314, "i41495" }, -- Perfect Potent Huge Citrine
+				{ 315, "i41496" }, -- Perfect Prisinte Huge Citrine
+				{ 316, "i41497" }, -- Perfect Reckless Huge Citrine
+				{ 317, "i41498" }, -- Perfect Resolute Huge Citrine
+				{ 318, "i41499" }, -- Perfect Resplendent Huge Citrine
+				{ 319, "i41500" }, -- Perfect Stalwart Huge Citrine
+				{ 320, "i41501" }, -- Perfect Stark Huge Citrine
+				{ 321, "i41502" }, -- Perfect Veiled Huge Citrine
+				{ 322, "i41429" }, -- Perfect Wicked Huge Citrine
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Green"]),
+			name = format(GEM_FORMAT1, ALIL["Green"]),
 			[NORMAL_DIFF] = {
-				{ 1, 66442 },	-- Energized Eye of Zul
-				{ 2, 66434 },	-- Forceful Eye of Zul
-				{ 3, 66431 },	-- Jagged Eye of Zul
-				{ 4, 66439 },	-- Lambent Eye of Zul
-				{ 5, 66435 },	-- Misty Eye of Zul
-				{ 6, 66429 },	-- Vivid Eye of Zul
-				{ 7, 66441 },	-- Radiant Eye of Zul
-				{ 8, 66338 },	-- Enduring Eye of Zul
-				{ 9, 66443 },	-- Shattered Eye of Zul
-				{ 10, 66428 },	-- Steady Eye of Zul
-				{ 11, 66445 },	-- Turbid Eye of Zul
-				{ 12, 66436 },  -- Sundered Eye of Zul
-				{ 13, 66432 },  -- Timeless Eye of Zul
-				{ 14, 66440 },  -- Intricate Eye of Zul
-				{ 15, 66433 },  -- Seer's Eye of Zul
-				{ 16, 66444 },  -- Opaque Eye of Zul
-				{ 17, 66438 },  -- Tense Eye of Zul
-				{ 18, 66430 },  -- Dazzling Eye of Zul
-				{ 19, 66437 },  -- Shining Eye of Zul
-				{ 101, 54011 },	-- Energized Forest Emerald
-				{ 102, 54001 },	-- Forceful Forest Emerald
-				{ 103, 53996 },	-- Jagged Forest Emerald
-				{ 104, 54009 },	-- Lambent Forest Emerald
-				{ 105, 54003 },	-- Misty Forest Emerald
-				{ 106, 53997 },	-- Vivid Forest Emerald
-				{ 107, 54012 },	-- Radiant Forest Emerald
-				{ 108, 53998 },	-- Enduring Forest Emerald
-				{ 109, 54014 },	-- Shattered Forest Emerald
-				{ 110, 54000 },	-- Steady Forest Emerald
-				{ 111, 54005 },	-- Turbid Forest Emerald
-				{ 112, 54008 }, -- Sundered Forest Emerald
-				{ 113, 53995 }, -- Timeless Forest Emerald
-				{ 114, 54006 }, -- Intricate Forest Emerald
-				{ 115, 54002 }, -- Seer's Forest Emerald
-				{ 116, 54010 }, -- Opaque Forest Emerald
-				{ 117, 54013 }, -- Tense Forest Emerald
-				{ 118, 54007 }, -- Dazzling Forest Emerald
-				{ 119, 54004 }, -- Shining Forest Emerald
-				{ 201, 53930 },	-- Energized Dark Jade
-				{ 202, 53920 },	-- Forceful Dark Jade
-				{ 203, 53916 },	-- Jagged Dark Jade
-				{ 204, 53928 },	-- Lambent Dark Jade
-				{ 205, 53922 },	-- Misty Dark Jade
-				{ 206, 53917 },	-- Vivid Dark Jade
-				{ 207, 53931 },	-- Radiant Dark Jade
-				{ 208, 53918 },	-- Enduring Dark Jade
-				{ 209, 53933 },	-- Shattered Dark Jade
-				{ 210, 53919 },	-- Steady Dark Jade
-				{ 211, 53924 },	-- Turbid Dark Jade
-				{ 212, 53927 }, -- Sundered Dark Jade
-				{ 213, 53894 }, -- Timeless Dark Jade
-				{ 214, 53925 }, -- Intricate Dark Jade
-				{ 215, 53921 }, -- Seer's Dark Jade
-				{ 216, 53929 }, -- Opaque Dark Jade
-				{ 217, 53932 }, -- Tense Dark Jade
-				{ 218, 53926 }, -- Dazzling Dark Jade
-				{ 219, 53923 }, -- Shining Dark Jade
+				{ 1, 66430 },   -- Dazzling Eye of Zul
+				{ 2, 66338 },   -- Enduring Eye of Zul
+				{ 3, 66442 },	-- Energized Eye of Zul
+				{ 4, 66434 },	-- Forceful Eye of Zul
+				{ 5, 66440 },   -- Intricate Eye of Zul
+				{ 6, 66431 },	-- Jagged Eye of Zul
+				{ 7, 66439 },   -- Lambent Eye of Zul
+				{ 8, 66435 },	-- Misty Eye of Zul
+				{ 9, 66444 },   -- Opaque Eye of Zul
+				{ 10, 66441 },	-- Radiant Eye of Zul
+				{ 11, 66433 },  -- Seer Eye of Zul
+				{ 12, 66443 },	-- Shattered Eye of Zul
+				{ 13, 66437 },  -- Shining Eye of Zul
+				{ 14, 66428 },	-- Steady Eye of Zul
+				{ 15, 66436 },  -- Sundered Eye of Zul
+				{ 16, 66438 },  -- Tense Eye of Zul
+				{ 17, 66432 },  -- Timeless Eye of Zul
+				{ 18, 66445 },	-- Turbid Eye of Zul
+				{ 19, 66429 },  -- Vivid Eye of Zul
+				-- blue
+				{ 101, 54007 }, -- Dazzling Forest Emerald
+				{ 102, 53998 }, -- Enduring Forest Emerald
+				{ 103, 54011 },	-- Energized Forest Emerald
+				{ 104, 54001 },	-- Forceful Forest Emerald
+				{ 105, 54006 }, -- Intricate Forest Emerald
+				{ 106, 53996 },	-- Jagged Forest Emerald
+				{ 107, 54009 }, -- Lambent Forest Emerald
+				{ 108, 54003 },	-- Misty Forest Emerald
+				{ 109, 54010 }, -- Opaque Forest Emerald
+				{ 110, 54012 },	-- Radiant Forest Emerald
+				{ 111, 54002 }, -- Seer Forest Emerald
+				{ 112, 54014 },	-- Shattered Forest Emerald
+				{ 113, 54004 }, -- Shining Forest Emerald
+				{ 114, 54000 },	-- Steady Forest Emerald
+				{ 115, 54008 }, -- Sundered Forest Emerald
+				{ 116, 54013 }, -- Tense Forest Emerald
+				{ 117, 53995 }, -- Timeless Forest Emerald
+				{ 118, 54005 },	-- Turbid Forest Emerald
+				{ 119, 53997 }, -- Vivid Forest Emerald
+				-- green
+				{ 201, 53926 }, -- Dazzling Dark Jade
+				{ 202, 53918 }, -- Enduring Dark Jade
+				{ 203, 53930 },	-- Energized Dark Jade
+				{ 204, 53925 },	-- Forceful Dark Jade
+				{ 205, 53925 }, -- Intricate Dark Jade
+				{ 206, 53916 },	-- Jagged Dark Jade
+				{ 207, 53928 }, -- Lambent Dark Jade
+				{ 208, 53922 },	-- Misty Dark Jade
+				{ 209, 53929 }, -- Opaque Dark Jade
+				{ 210, 53931 },	-- Radiant Dark Jade
+				{ 211, 53921 }, -- Seer Dark Jade
+				{ 212, 53933 },	-- Shattered Dark Jade
+				{ 213, 53919 }, -- Shining Dark Jade
+				{ 214, 53919 },	-- Steady Dark Jade
+				{ 215, 53927 }, -- Sundered Dark Jade
+				{ 216, 53932 }, -- Tense Dark Jade
+				{ 217, 53894 }, -- Timeless Dark Jade
+				{ 218, 53924 },	-- Turbid Dark Jade
+				{ 219, 53917 }, -- Vivid Dark Jade
+				-- perfect
+				{ 301, "i41463" }, -- Perfect Dazzling Dark Jade
+				{ 302, "i41464" }, -- Perfect Enduring Dark Jade
+				{ 303, "i41465" }, -- Perfect Energized Dark Jade
+				{ 304, "i41466" }, -- Perfect Forceful Dark Jade
+				{ 305, "i41467" }, -- Perfect Intricate Dark Jade
+				{ 306, "i41468" }, -- Perfect Jagged Dark Jade
+				{ 307, "i41469" }, -- Perfect Lambent Dark Jade
+				{ 308, "i41470" }, -- Perfect Misty Dark Jade
+				{ 309, "i41471" }, -- Perfect Opaque Dark Jade
+				{ 310, "i41472" }, -- Perfect Radiant Dark Jade
+				{ 311, "i41473" }, -- Perfect Seer Dark Jade
+				{ 312, "i41474" }, -- Perfect Shattered Dark Jade
+				{ 313, "i41475" }, -- Perfect Shining Dark Jade
+				{ 314, "i41476" }, -- Perfect Steady Dark Jade
+				{ 315, "i41477" }, -- Perfect Sundered Dark Jade
+				{ 316, "i41478" }, -- Perfect Tense Dark Jade
+				{ 317, "i41479" }, -- Perfect Timeless Dark Jade
+				{ 318, "i41480" }, -- Perfect Turbid Dark Jade
+				{ 319, "i41481" }, -- Perfect Vivid Dark Jade
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Purple"]),
+			name = format(GEM_FORMAT1, ALIL["Purple"]),
 			[NORMAL_DIFF] = {
 				{ 1, 66553 },	-- Balanced Dreadstone
 				{ 2, 66560 },	-- Defender's Dreadstone
@@ -1366,6 +1463,7 @@ data["JewelcraftingWrath"] = {
 				{ 11, 66557 },	-- Shifting Dreadstone
 				{ 12, 66554 },	-- Sovereign Dreadstone
 				{ 13, 66565 },	-- Tenuous Dreadstone
+				-- blue
 				{ 16, 53969 },	-- Balanced Twilight Opal
 				{ 17, 53972 },	-- Defender's Twilight Opal
 				{ 18, 53965 },	-- Glowing Twilight Opal
@@ -1379,6 +1477,7 @@ data["JewelcraftingWrath"] = {
 				{ 26, 53963 },	-- Shifting Twilight Opal
 				{ 27, 53962 },	-- Sovereign Twilight Opal
 				{ 28, 53964 },	-- Tenuous Twilight Opal
+				-- green
 				{ 101, 53866 },	-- Balanced Shadow Crystal
 				{ 102, 53869 },	-- Defender's Shadow Crystal
 				{ 103, 53862 },	-- Glowing Shadow Crystal
@@ -1392,14 +1491,28 @@ data["JewelcraftingWrath"] = {
 				{ 111, 53860 },	-- Shifting Shadow Crystal
 				{ 112, 53859 },	-- Sovereign Shadow Crystal
 				{ 113, 53861 },	-- Tenuous Shadow Crystal
+				-- perfect
+				{ 116, "i41450" },	-- Perfect Balanced Shadow Crystal
+				{ 117, "i41451" },	-- Perfect Defender's Shadow Crystal
+				{ 118, "i41452" },	-- Perfect Glowing Shadow Crystal
+				{ 119, "i41453" },	-- Perfect Guardian's Shadow Crystal
+				{ 120, "i41454" },	-- Perfect Infused Shadow Crystal
+				{ 121, "i41455" },	-- Perfect Mysterious Shadow Crystal
+				{ 122, "i41456" },	-- Perfect Puissant Shadow Crystal
+				{ 123, "i41457" },	-- Perfect Purified Shadow Crystal
+				{ 124, "i41458" },	-- Perfect Regal Shadow Crystal
+				{ 125, "i41459" },	-- Perfect Royal Shadow Crystal
+				{ 126, "i41460" },	-- Perfect Shifting Shadow Crystal
+				{ 127, "i41461" },	-- Perfect Sovereign Shadow Crystal
+				{ 128, "i41462" },	-- Perfect Tenuous Shadow Crystal
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Prismatic"]),
+			name = format(GEM_FORMAT1, ALIL["Prismatic"]),
 			[NORMAL_DIFF] = {
-				{ 1, 68253 }, -- Nightmare Tear
+				{ 1, 56530 }, -- Enchanted Pearl
 				{ 2, 56531 }, -- Enchanted Tear
-				{ 3, 56530 }, -- Enchanted Pearl
+				{ 3, 68253 }, -- Nightmare Tear
 			}
 		},
 		{
@@ -1435,7 +1548,7 @@ data["JewelcraftingWrath"] = {
 			name = AL["Misc"],
 			[NORMAL_DIFF] = {
 				{ 1, 62242 },	-- Icy Prism
-				{ 3, "i43297"},	-- Damaged Necklace
+				{ 3, "i43297" },	-- Damaged Necklace
 				{ 16, 56208 },	-- Shadow Jade Focusing Lens
 				{ 17, 56206 },	-- Shadow Crystal Focusing Lens
 				{ 18, 56205 },	-- Dark Jade Focusing Lens
@@ -1537,6 +1650,7 @@ data["InscriptionWrath"] = {
 				{ 19, 59480 },	-- Strange Tarot
 			}
 		},
+		--[[
 		{
 			name = ALIL["WARRIOR"],
 			[MAJOR_GLYPHS_DIFF] = {
@@ -1948,6 +2062,7 @@ data["InscriptionWrath"] = {
 				{ 7, 58286 }, -- Glyph of Aquatic Form / 75
 			},
 		},
+		--]]
 		{
 			name = AL["Ink"],
 			[NORMAL_DIFF] = {
@@ -1981,12 +2096,7 @@ data["InscriptionWrath"] = {
 			name = AL["Misc"],
 			[NORMAL_DIFF] = {
 				{ 1, 59387 },	-- Certificate of Ownership
-				{ 3, 52739 },	-- Armor Vellum
-				{ 4, 59499 },	-- Armor Vellum II
-				{ 5, 59500 },	-- Armor Vellum III
-				{ 18, 52840 },	-- Weapon Vellum
-				{ 19, 59488 },	-- Weapon Vellum II
-				{ 20, 59501 },	-- Weapon Vellum III
+				{ 3, 52739 },	-- Enchanting Vellum
 			}
 		},
 	}
@@ -2102,6 +2212,7 @@ data["CookingWrath"] = {
 				{ 17, 45568 },	-- Firecracker Salmon
 			},
 		},
+
 		{
 			name = ALIL["Attack Power"].." + "..ALIL["Spell Power"],
 			[NORMAL_DIFF] = {
@@ -2121,7 +2232,7 @@ data["CookingWrath"] = {
 			},
 		},
 		{
-			name = AL["Mana Per 5 Sec."],
+			name = ALIL["Mana Per 5 Sec."],
 			[NORMAL_DIFF] = {
 				{ 1, 45559 },	-- Mighty Rhino Dogs
 				{ 2, 57433 },	-- Spicy Fried Herring

@@ -1414,7 +1414,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Orange"]),
+			name = format(GEM_FORMAT1, ALIL["Orange"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39738 }, -- Wicked Pyrestone (375)
 				{ 2, 39471 }, -- Wicked Noble Topaz (350)
@@ -1439,7 +1439,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Green"]),
+			name = format(GEM_FORMAT1, ALIL["Green"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39739 }, -- Enduring Seaspray Emerald (375)
 				{ 2, 31110 }, -- Enduring Talasite (350)
@@ -1460,7 +1460,7 @@ data["JewelcraftingBC"] = {
 			}
 		},
 		{
-			name = format(GEM_FORMAT1, AL["Purple"]),
+			name = format(GEM_FORMAT1, ALIL["Purple"]),
 			[NORMAL_DIFF] = {
 				{ 1, 39728 }, -- Shifting Shadowsong Amethyst (375)
 				{ 2, 31103 }, -- Shifting Nightseye (350)
@@ -1671,7 +1671,7 @@ data["CookingBC"] = {
 			},
 		},
 		{
-			name = ALIL["Stamina"].." + "..AL["Mana Per 5 Sec."],
+			name = ALIL["Stamina"].." + "..ALIL["Mana Per 5 Sec."],
 			[NORMAL_DIFF] = {
 				{ 1, 33292 }, -- Blackened Sporefish (310)
 			},

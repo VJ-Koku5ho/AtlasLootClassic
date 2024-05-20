@@ -5,7 +5,6 @@ AtlasLoot.AtlasLootDBDefaults = {
 		showIDsInTT = false,
 		showItemLvlInTT = true,
 		showCompanionLearnedInfo = true,
-
 		showLvlRange = true,
 		enableBossLevel = false,
 		showMinEnterLvl = false,
